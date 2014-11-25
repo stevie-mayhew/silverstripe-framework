@@ -1,6 +1,6 @@
 title: How to test emails within unit tests
 
-# Testing Email within Unit Tests
+# Testing email within unit tests
 
 SilverStripe's test system has built-in support for testing emails sent using the `[api:Email]` class. If you are 
 running a `[api:SapphireTest]` test, then it holds off actually sending the email, and instead lets you assert that an 
@@ -32,7 +32,7 @@ Each of the arguments (`$to`, `$from`, `$subject` and `$body`) can be either one
 
 ## Related Documentation
 
-* [Email](../../email)
+* [Email](/developer_guides/email)
 
 ## API Documentation
 

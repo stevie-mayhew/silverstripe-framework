@@ -4,7 +4,7 @@ summary: Introduction to using aspect-oriented programming with SilverStripe.
 # Aspects
 
 Aspect oriented programming is the idea that some logic abstractions can be applied across various type hierarchies 
-"after the fact", altering the behavior of the system without altering the code structures that are already in place. 
+"after the fact", altering the behaviour of the system without altering the code structures that are already in place. 
 
 > In computing, aspect-oriented programming (AOP) is a programming paradigm which isolates secondary or supporting 
 > functions from the main program's business logic. It aims to increase modularity by allowing the separation of 

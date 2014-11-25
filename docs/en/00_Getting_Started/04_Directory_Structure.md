@@ -1,19 +1,19 @@
-# Directory Structure
+# Directory structure
 
 ## Introduction
 
 The directory-structure in SilverStripe it built on "convention over configuration", so the placement of some files and
 directories is meaningful to its logic.
  
-## Core Structure
+## Core structure
 
 Directory   | Description
 ---------   | -----------
 `assets/`   | Contains images and other files uploaded via the SilverStripe CMS. You can also place your own content inside it, and link to it from within the content area of the CMS.
-`cms/`      | Contains all the files that form the CMS area of your site. It’s structure is similiar to the mysite/ directory, so if you find something interesting, it should be easy enough to look inside and see how it was built. 
-`framework/` | The framework that builds both your own site and as the CMS that powers it. You’ll be utilizing files in this directory often, both directly and indirectly.
+`cms/`      | Contains all the files that form the CMS area of your site. It’s structure is similar to the mysite/ directory, so if you find something interesting, it should be easy enough to look inside and see how it was built. 
+`framework/` | The framework that builds both your own site and as the CMS that powers it. You’ll be utilising files in this directory often, both directly and indirectly.
 
-## Custom Code Structure
+## Custom code structure
 
 We're using `<mysite>` as an example - arbitrary directory-names are allowed, as long as they don't collide with
 existing modules or the directories lists in "Core Structure".
@@ -28,16 +28,16 @@ existing modules or the directories lists in "Core Structure".
  | `<mysite>/images `    | Images used in the HTML templates                                   | 
  | `<mysite>/javascript` | Javascript and other script files 
 
-## Themes Structure
+## Themes structure
 
  | `themes/simple/`      | Standard "simple" theme                                         |
  | ------------------        | ---------------------------                                         | 
  | `themes/yourtheme/`       | The themes folder can contain more than one theme - here's your own |
 
 
-See [themes](/topics/themes)
+See [themes](/developer_guides/templates/themes)
 
-## Module Structure		{#module_structure}
+## Module structure		{#module_structure}
 
 Modules are currently top-level folders that have a `_config.php` file or a `_config/` directory present.
 They should follow the same conventions as posed in "Custom Site Structure"
@@ -56,13 +56,13 @@ Example Forum:
 
 Module developers can bundle developer documentation with their code by producing
 plain text files inside a 'docs' folder located in the module folder. These files
-can be written with the Markdown syntax (See [Contributing Documentation](/misc/contributing/documentation))
+can be written with the Markdown syntax (See [Contributing Documentation](/contributing/documentation))
 and include media such as images or videos.
 
-Inside the docs folder, developers should organize the markdown files into each 
+Inside the docs folder, developers should organise the markdown files into each 
 separate language they wish to write documentation for (usually just `en`). Inside 
 each languages' subfolder, developers then have freedom to create whatever structure 
-they wish for organizing the documentation they wish.
+they wish for organising the documentation they wish.
 
 Example Forum Documentation:
 
@@ -86,7 +86,7 @@ in most cases, you don't need to worry about include paths or `require()` calls
 in your own code - after adding a new class, simply regenerate the manifest
 by using a `flush=1` query parameter. See the ["Manifests" documentation](/developer_guides/execution_pipeline/manifests) for details.
 
-## Best Practices
+## Best practices
 
 ### Making /assets readonly
-See [secure-development#filesystem](/topics/security#filesystem)
+See [secure-development#filesystem](/developer_guides/security/secure_coding/#filesystem)

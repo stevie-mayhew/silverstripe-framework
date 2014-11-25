@@ -1,7 +1,7 @@
-title: Common Variables
+title: Common variables
 summary: Some of the common variables and methods your templates can use, including Menu, SiteConfig, and more.
 
-# Common Variables
+# Common variables
 
 The page below describes a few of common variables and methods you'll see in a SilverStripe template. This is not an 
 exhaustive list. From your template you can call any method, database field, or relation on the object which is 
@@ -18,7 +18,7 @@ extensions.
 </div>
 
 Outputting these variables is only the start, if you want to format or manipulate them before adding them to the template
-have a read of the [Formating, Modifying and Casting Variables](casting) documentation.
+have a read of the [formatting, modifying and casting variables](casting) documentation.
 
 <div class="alert" markdown="1">
 Some of the following only apply when you have the `CMS` module installed. If you're using the `Framework` alone, this
@@ -26,7 +26,7 @@ functionality may not be included.
 </div>
 
 
-## Base Tag
+## Base tag
 
 	:::ss
 	<head>
@@ -55,7 +55,7 @@ Returns the currently logged in [api:Member] instance, if there is one logged in
 	<% end_if %>
 
 
-## Title and Menu Title
+## Title and MenuTitle
 
 	:::ss
 	$Title
@@ -71,7 +71,7 @@ displayed on the web page, while `MenuTitle` can be a shorter version suitable f
 If `MenuTitle` is left blank by the CMS author, it'll just default to the value in `Title`.
 </div>
 
-## Page Content
+## Page content
 
 	:::ss
 	$Content
@@ -84,7 +84,7 @@ Please note that this database content can be `versioned`, meaning that draft co
 from published content shown to your website visitors. In templates, you don't need to worry about this distinction.
 
 The `$Content` variable contains the published content by default,and only preview draft content if explicitly 
-requested (e.g. by the "preview" feature in the CMS) (see the [versioning documentation](/../model/versioning) for 
+requested (e.g. by the "preview" feature in the CMS) (see the [versioning documentation](../model/versioning) for 
 more details).
 </div>
 
@@ -105,7 +105,7 @@ than PHP code. By default, this includes a Website title and a Tagline.
 global content such as your footer content.
 
 
-## Meta Tags
+## MetaTags
 
 The `$MetaTags` placeholder in a template returns a segment of HTML appropriate for putting into the `<head>` tag. It
 will set up title, keywords and description meta-tags, based on the CMS content and is editable in the 'Meta-data' tab
@@ -150,7 +150,7 @@ link.
 	$AbsoluteLink
 	<!-- returns http://yoursite.com/about-us/offices/ -->
 
-### Linking Modes
+### LinkingMode
 
 	:::ss
 	$LinkingMode
@@ -209,7 +209,7 @@ behavior based on the page type used:
 
 	<!-- returns <body class="HomePage">, <body class="BlogPage"> -->
 
-## Children Loops
+## Children loops
 
 	:::ss
 	<% loop $Children %>
@@ -239,7 +239,7 @@ pages underneath a "staff" holder on any page, regardless if its on the top leve
 ### AllChildren
 
 Content authors have the ability to hide pages from menus by un-selecting the `ShowInMenus` checkbox within the CMS. 
-This option will be honored by `<% loop $Children %>` and `<% loop $Menu %>` however if you want to ignore the user
+This option will be honoured by `<% loop $Children %>` and `<% loop $Menu %>` however if you want to ignore the user
 preference, `AllChildren` does not filter by `ShowInMenus`.
 
 	:::ss
@@ -248,7 +248,7 @@ preference, `AllChildren` does not filter by `ShowInMenus`.
 	<% end_loop %>
 
 
-### Menu Loops
+### Menu loops
 
 	:::ss
 	<% loop $Menu(1) %>
@@ -261,7 +261,7 @@ preference, `AllChildren` does not filter by `ShowInMenus`.
 Pages with the `ShowInMenus` property set to `false` will be filtered out.
 </div>
 
-## Access to a specific Page
+## Access to a specific page
 
 	:::ss
 	<% with $Page(my-page) %>
@@ -270,7 +270,7 @@ Pages with the `ShowInMenus` property set to `false` will be filtered out.
 
 Page will return a single page from site, looking it up by URL. 
 
-## Access to Parent and Level Pages
+## Access to parent and level pages
 
 ### Level
 
@@ -300,7 +300,7 @@ For example, imagine you're on the "bob marley" page, which is three levels in: 
 	<!-- returns 'about us' -->
 
 
-## Navigating Scope
+## Navigating scope
 
 ### Me
 
@@ -380,7 +380,7 @@ By default, it uses the template defined in `cms/templates/BreadcrumbsTemplate.s
 	<% end_if %>
 
 <div class="info" markdown="1">
-To customize the markup that the `$Breadcrumbs` generates, copy `cms/templates/BreadcrumbsTemplate.ss` to 
+To customise the markup that the `$Breadcrumbs` generates, copy `cms/templates/BreadcrumbsTemplate.ss` to 
 `mysite/templates/BreadcrumbsTemplate.ss`, modify the newly copied template and flush your SilverStripe cache.
 </div>
 
@@ -398,10 +398,10 @@ You can add your own forms by implementing new form instances (see the [Forms tu
 
 ## Related
 
- * [Casting and Formating Variables](casting)
+ * [Casting and Formatting Variables](casting)
  * [Template Inheritance](template_inheritance)
 
-## API Documentation
+## API documentation
 
  * `[api:ContentController]`: The main controller responsible for handling pages.
  * `[api:Controller]`: Generic controller (not specific to pages.)

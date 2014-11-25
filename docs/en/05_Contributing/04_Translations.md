@@ -5,11 +5,11 @@ summary: Translate interface components like button labels into multiple languag
 
 We are always looking for new translators. Even if a specific language already is translated and has an official 
 maintainer, we can use helping hands in reviewing and updating translations. Important: It is perfectly fine if you 
-only have time for a partial translation or quick review work - our system accomodates many people collaborating on the 
+only have time for a partial translation or quick review work - our system accommodates many people collaborating on the 
 same language.
 
 The content for UI elements (button labels, field titles) and instruction texts shown in the CMS and elsewhere is 
-stored in the PHP code for a module (see [i18n](/topics/i18n)). All content can be extracted as a "language file", and 
+stored in the PHP code for a module (see [i18n](/developer_guides/i18n)). All content can be extracted as a "language file", and 
 uploaded to an online translation editor interface. SilverStripe is already translated in over 60 languages, and we're 
 relying on native speakers to keep these up to date, and of course add new languages. 
 
@@ -44,14 +44,14 @@ on github, you can create a fork, edit the files, and send back your pull reques
 ### How do I translate substituted strings? (e.g. '%s' or '{my-variable}')
 
 You don't have to - if the english master-string reads 'Hello %s', your german translation would be 'Hallo %s'. Strings 
-prefixed by a percentage-sign are automatically replaced by silverstripe with dynamic content. See 
+prefixed by a percentage-sign are automatically replaced by SilverStripe with dynamic content. See 
 http://php.net/sprintf for details. The newer `{my-variable}` format works the same way, but makes its intent clearer, 
 and allows reordering of placeholders in your translation.
 
 ### Do I need to convert special characters (e.g. HTML-entities)?
 
 Special characters (such as german umlauts) need to be entered in their native form. Please don't use HTML-entities 
-("ä" instead of "ä"). Silverstripe stores and renders most strings in UTF8 (Unicode) format.
+("ä" instead of "ä"). SilverStripe stores and renders most strings in UTF8 (Unicode) format.
 
 ### How can I check out my translation in the interface?
 
@@ -70,7 +70,7 @@ same capabilities. A translated string (as identified by its unique "entity name
 releases. If the interface changes in a non-trivial fashion, the new translations required should have new identifiers 
 as well.
 
-Example: We renamed the "Security" menu title to "Users" in our 3.0 release. As it would confuse users of older versions
+Example: We renamed the "Security" menu title to "Users" in our 3.1 release. As it would confuse users of older versions
 unnecessarily, we should be using a new entity name for this, and avoid the change propagating to an older SilverStripe 
 version.
 
@@ -82,14 +82,14 @@ dropdown which automatically includes all found translations (based on the files
 
 ### I've found a piece of untranslatable text
 
-It is entirely possible that we missed certain strings in preparing Silverstripe for translation-support. If you're 
-technically minded, please read [i18n](/topics/i18n) on how to make it translatable. Otherwise just post your findings 
+It is entirely possible that we missed certain strings in preparing SilverStripe for translation-support. If you're 
+technically minded, please read [i18n](/developer_guides/i18n) on how to make it translatable. Otherwise just post your findings 
 to the forum.
 
 ### How do I add my own module?
 
 Once you've built a translation-enabled module, you can run the "textcollector" on your local installation for this 
-specific module (see [i18n](/topics/i18n)). This should find all calls to `_t()` in php and template files, and generate 
+specific module (see [i18n](/developer_guides/i18n)). This should find all calls to `_t()` in php and template files, and generate 
 a new lang file with the default locale (path: <mymodule>/lang/en.yml). Upload this file to the online translation 
 tool, and wait for your translators to do their magic!
 
@@ -98,9 +98,9 @@ tool, and wait for your translators to do their magic!
 SilverStripe doesn't have built-in support for attribute-based RTL-modifications (`<html dir="rtl">`). 
 
 We are currently investigating the available options, and are eager to get feedback on your experiences with 
-translating silverstripe RTL.
+translating SilverStripe RTL.
 
-### Can I translate/edit the language files in my favorite text editor (on my local installation)
+### Can I translate/edit the language files in my favourite text editor (on my local installation)
 
 Not for modules managed by transifex.com, including "framework" and "cms. It causes us a lot of work in merging these 
 files back. Please use the online translation tool for all new and existing translations.
@@ -112,7 +112,7 @@ source tree.
 
 ### How does my translation get approved, who is the maintainer?
 
-The online translation tool (transifex.com) is designed to be decentralized and collaborative, so there's no strict 
+The online translation tool (transifex.com) is designed to be decentralised and collaborative, so there's no strict 
 approval or review process. Every logged-in user on the system can flag translations, and discuss them with other 
 translators.
 
@@ -128,19 +128,19 @@ This was a custom-built online translation tool serving us well for a couple of 
 were migrated. Unfortunately, the ownership of individual translations couldn't be migrated.
 
 As the new tool doesn't support the PHP format used in SilverStripe 2.x, this means that we no longer have a working 
-translation tool for PHP files. Please edit the PHP files directly and [send us pull requests](/misc/contributing).
+translation tool for PHP files. Please edit the PHP files directly and [send us pull requests](/contributing).
 
 This also applies for any modules staying compatible with SilverStripe 2.x.
 
 ## Contact
 
 Translators have their own [mailinglist](https://groups.google.com/forum/#!forum/silverstripe-translators), but you can 
-also reach a core member on [IRC](http://silverstripe.org/irc). The transifex.com interface has a built-in discussion 
+also reach a core member on [IRC](http://irc.silverstripe.org/). The transifex.com interface has a built-in discussion 
 board if you have specific comments on a translation.
 
 ## Related
 
- * [i18n](/developer_guids/i18n): Developer-level documentation of Silverstripe's i18n capabilities
- * [translation-process](translation-process): Information about managing translations for the core team and/or module maintainers.
+ * [i18n](/developer_guides/i18n): Developer-level documentation of Silverstripe's i18n capabilities
+ * [translation-process](translation_process): Information about managing translations for the core team and/or module maintainers.
  * [translatable](https://github.com/silverstripe/silverstripe-translatable): DataObject-interface powering the website-content translations
- * ["Translatable ModelAdmin" module](http://silverstripe.org/translatablemodeladmin-module/): An extension which allows translations of DataObjects inside ModelAdmin
+ * ["Translatable ModelAdmin" module](http://www.silverstripe.org/translatablemodeladmin-module/): An extension which allows translations of DataObjects inside ModelAdmin

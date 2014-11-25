@@ -1,10 +1,10 @@
-title: SearchFilter Modifiers
+title: SearchFilter modifiers
 summary: Use suffixes on your ORM queries.
 
-# SearchFilter Modifiers
+# SearchFilter modifiers
 
 The `filter` and `exclude` operations specify exact matches by default. However, there are a number of suffixes that
-you can put on field names to change this behavior. These are represented as `SearchFilter` subclasses and include.
+you can put on field names to change this behaviour. These are represented as `SearchFilter` subclasses and include.
 
  * [api:StartsWithFilter]
  * [api:EndsWithFilter] 
@@ -29,7 +29,7 @@ An example of a `SearchFilter` in use:
 		'LastName:PartialMatch' => 'z'
 	));
 
-Developers can define their own [api:SearchFilter] if needing to extend the ORM filter and exclude behaviors.
+Developers can define their own [api:SearchFilter] if needing to extend the ORM filter and exclude behaviours.
 
 These suffixes can also take modifiers themselves. The modifiers currently supported are `":not"`, `":nocase"` and 
 `":case"`. These negate the filter, make it case-insensitive and make it case-sensitive, respectively. The default
@@ -48,6 +48,6 @@ The following is a query which will return everyone whose first name starts with
 		'FirstName:StartsWith:not' => 'W'
 	));
 
-## API Documentation
+## API documentation
 
 * [api:SearchFilter]

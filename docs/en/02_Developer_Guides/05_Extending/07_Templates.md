@@ -1,10 +1,10 @@
-title: Custom Templates
+title: Custom templates
 summary: Override templates from core and modules in your application
 
-# Custom Templates
+# Custom templates
 
 See [Template Inheritance](../templates).
 
-## Form Templates
+## Form templates
 
 See [Form Templates](../forms/form_templates).

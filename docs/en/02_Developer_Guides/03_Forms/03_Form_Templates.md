@@ -1,7 +1,7 @@
-title: Form Templates
-summary: Customize the generated HTML for a FormField or an entire Form.
+title: Form templates
+summary: Customise the generated HTML for a FormField or an entire Form.
 
-# Form Templates
+# Form templates
 
 Most markup generated in SilverStripe can be replaced by custom templates. Both [api:Form] and [api:FormField] instances
 can be rendered out using custom templates using `setTemplate`. 
@@ -56,14 +56,14 @@ For [api:FormField] instances, there are several other templates that are used o
 	// field is embedded within another field. For example, if the field is 
 	// part of a `FieldGroup` or `CompositeField` alongside other fields.
 
-All templates are rendered within the scope of the [api:FormField]. To understand more about Scope within Templates as 
-well as the available syntax, see the [Templates](../templates) documentation.
+All templates are rendered within the scope of the [api:FormField]. To understand more about scope within templates as 
+well as the available syntax, see the [Templates](../templates/syntax) documentation.
 
-## Related Documentation
+## Related documentation
 
-* [How to: Create a lightweight Form](how_tos/lightweight_form)
+* [How to: Create a lightweight form](how_tos/lightweight_form)
 
-## API Documentation
+## API documentation
 
 * [api:Form]
 * [api:FormField]

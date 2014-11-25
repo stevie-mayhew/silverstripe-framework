@@ -1,7 +1,7 @@
-title: Template Syntax
+title: Template syntax
 summary: A look at the operations, variables and language controls you can use within templates.
 
-# Template Syntax
+# Template syntax
 
 SilverStripe templates are plain text files that have `.ss` extension and located within the `templates` directory of 
 a module, theme, or your `mysite` folder. A template can contain any markup language (e.g HTML, CSV, JSON..) and before
@@ -47,8 +47,8 @@ text-based format.
 
 ## Variables
 
-Variables are placeholders that will be replaced with data from the [DataModel](../model/) or the current 
-[Controller](../controllers). Variables are prefixed with a `$` character. Variable names must start with an 
+Variables are placeholders that will be replaced with data from the [datamodel](../model) or the current 
+[controller](../controllers). Variables are prefixed with a `$` character. Variable names must start with an 
 alphabetic character or underscore, with subsequent characters being alphanumeric or underscore:
 
 	:::ss
@@ -75,7 +75,7 @@ been defined, the system will return an error.
 
 <div class="note" markdown="1">
 For more detail around how variables are inserted and formatted into a template see 
-[Formating, Modifying and Casting Variables](casting)
+[formatting, modifying and casting variables](casting)
 </div>
 
 Variables can come from your database fields, or custom methods you define on your objects.
@@ -111,7 +111,7 @@ record and any subclasses of those two.
 	// returns the page `Content` property
 
 
-## Conditional Logic
+## Conditional logic
 
 The simplest conditional block is to check for the presence of a value (does not equal 0, null, false).
 
@@ -160,7 +160,7 @@ The inverse of `<% if %>` is `<% if not %>`.
 		I'm going out for dinner tonight.
 	<% end_if %>
 
-### Boolean Logic
+### Boolean logic
 
 Multiple checks can be done using `||`, `or`, `&&` or `and`. 
 
@@ -213,7 +213,7 @@ include.
 	<% end_with %>
 
 
-## Looping Over Lists
+## Looping over lists
 
 The `<% loop %>` tag is used to iterate or loop over a collection of items such as [api:DataList] or a [api:ArrayList] 
 collection.
@@ -234,7 +234,7 @@ page.
 $Title inside the loop refers to the Title property on each object that is looped over, not the current page like
 the reference of `$Title` outside the loop. 
 
-This demonstrates the concept of [Scope](#scope). When inside a <% loop %> the scope of the template has changed to the 
+This demonstrates the concept of [scope](#scope). When inside a <% loop %> the scope of the template has changed to the 
 object that is being looped over.
 </div>
 
@@ -288,7 +288,7 @@ Methods can also be chained
 		<% end_loop %>
 	</ul>
 
-### Position Indicators
+### Position indicators
 
 Inside the loop scope, there are many variables at your disposal to determine the current position in the list and 
 iteration.
@@ -312,7 +312,7 @@ iteration.
 	</ul>
 
 <div class="info" markdown="1">
-A common task is to paginate your lists. See the [Pagination](how_tos/pagination) how to for a tutorial on adding 
+A common task is to paginate your lists. See the [pagination](how_tos/pagination) how to for a tutorial on adding 
 pagination.
 </div>
 
@@ -340,8 +340,8 @@ $Modulus and $MultipleOf can help to build column and grid layouts.
 `clear: both` to `.column-1`.
 </div>
 
-$MultipleOf(value, offset) can also be utilized to build column and grid layouts. In this case we want to add a `<br>` 
-after every 3th item.
+$MultipleOf(value, offset) can also be utilised to build column and grid layouts. In this case we want to add a `<br>` 
+after every 3rd item.
 
 	:::ss
 	<% loop $Children %>
@@ -372,7 +372,7 @@ You can also use a backslash to escape the name of the variable, such as:
 	\$Foo // returns "$Foo"
 
 <div class="hint" markdown="1">
-For more information on formatting and casting variables see [Formating, Modifying and Casting Variables](casting)
+For more information on formatting and casting variables see [formatting, modifying and casting variables](casting)
 </div>
 
 ## Scope
@@ -391,7 +391,7 @@ record. In the case of `$Title` the flow looks like
 The list of variables you could use in your template is the total of all the methods in the current scope object, parent
 classes of the current scope object, and any [api:Extension] instances you have.
 
-### Navigating Scope
+### Navigating scope
 
 #### Up
 
@@ -452,7 +452,7 @@ The `<% with %>` tag lets you change into a new scope. Consider the following ex
 		Hello, $FirstName, welcome back. Your current balance is $Balance.
 	<% end_with %>
 
-This is functionalty the same as the following:
+This is functionality the same as the following:
 
 	:::ss
 	Hello, $CurrentMember.FirstName, welcome back. Yout current balance is $CurrentMember.Balance
@@ -487,7 +487,7 @@ for adding notes for other developers but for things you don't want published in
 
 [CHILDREN How_Tos]
 
-## API Documentation
+## API documentation
 
 * [api:SSViewer]
 * [api:SS_TemplateManifest]

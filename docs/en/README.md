@@ -1,7 +1,7 @@
-# Todo
+# About the SilverStripe documentation
 
 This folder is a work in progress for the new SilverStripe.org documentation
-project run by Cameron Findlay and Will Rossiter. If you want to contribute 
+project run by Cam Findlay and Will Rossiter. If you want to contribute 
 we'd love you too so flick us a message via email or twitter.
 
 The docsviewer module issue tracker has a set of functional requirements that
@@ -20,7 +20,7 @@ documentation to more tutorial style steps.
 ## Review *
 
 Below where we say 'review' this relates to writing new index folders, 
-organizing the existing pages into a cohesive structure, how-tos out to 
+organising the existing pages into a cohesive structure, how-tos out to 
 individual files and rewriting documentation pages in a standard and agreed upon
 language style.
 

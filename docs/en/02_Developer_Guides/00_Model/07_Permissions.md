@@ -1,10 +1,10 @@
-title: Model-Level Permissions
+title: Model-level permissions
 summary: Reduce risk by securing models.
 
-# Model-Level Permissions
+# Model-level permissions
 
 Models can be modified in a variety of controllers and user interfaces, all of which can implement their own security 
-checks. Often it makes sense to centralize those checks on the model, regardless of the used controller.
+checks. Often it makes sense to centralise those checks on the model, regardless of the used controller.
 
 The API provides four methods for this purpose: `canEdit()`, `canCreate()`, `canView()` and `canDelete()`.
 
@@ -44,7 +44,7 @@ checked in the invoking code. The CMS default sections as well as custom interfa
 [api:GridField] already enforce these permissions.
 </div>
 
-## API Documentation
+## API documentation
 
 * [api:DataObject]
 * [api:Permission]

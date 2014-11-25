@@ -1,4 +1,4 @@
-# URL Variable Tools
+# URL variable tools
 
 ## Introduction
 
@@ -20,11 +20,11 @@ Append the option and corresponding value to your URL in your browser's address 
  | flush=1      | | 1      | | Clears out all caches. Used mainly during development, e.g. when adding new classes or templates. Requires "dev" mode or ADMIN login |
  | showtemplate | | 1      | | Show the compiled version of all the templates used, including line numbers.  Good when you have a syntax error in a template. Cannot be used on a Live site without **isDev**. |
 
-## General Testing
+## General testing
 
  | URL Variable  | | Values | | Description                                                | 
  | ------------  | | ------ | | -----------                                                | 
- | isDev         | | 1      | | Put the site into [development mode](/topics/debugging), enabling debugging messages to the browser on a live server.  For security, you'll be asked to log in with an administrator log-in. Will persist for the current browser session. | 
+ | isDev         | | 1      | | Put the site into [development mode](../debugging/environment_types), enabling debugging messages to the browser on a live server.  For security, you'll be asked to log in with an administrator log-in. Will persist for the current browser session. | 
  | isTest        | | 1      | | See above. | 
  | debug         | | 1      | | Show a collection of debugging information about the director / controller operation        |
  | debug_request | | 1      | | Show all steps of the request from initial `[api:HTTPRequest]` to `[api:Controller]` to Template Rendering  | 
@@ -45,8 +45,8 @@ Append the option and corresponding value to your URL in your browser's address 
 
 ## Security Redirects
 
-You can set an URL to redirect back to after a [Security](/topics/security) action.  See the section on [URL
-Redirections](security#redirect_back_to_another_page_after_login) for more information and examples.
+You can set an URL to redirect back to after a [Security](../security) action.  See the section on [URL
+Redirections](../security#redirect_back_to_another_page_after_login) for more information and examples.
 
  | URL Variable | | Values | | Description                                                          | 
  | ------------ | | ------ | | -----------                                                          | 

@@ -46,11 +46,11 @@ response and modify the session within a test.
 		}
 	}
 
-## Related Documentation
+## Related documentation
 
-* [Functional Testing](../functional_testing)
-* [Unit Testing](../unit_testing)
+* [Functional testing](../functional_testing)
+* [Unit testing](../unit_testing)
 
-## API Documentation
+## API documentation
 
 * [api:FunctionalTest]

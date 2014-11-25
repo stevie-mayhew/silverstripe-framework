@@ -1,9 +1,9 @@
-title: Model Validation and Constraints
+title: Model validation and constraints
 summary: Validate your data at the model level
 
-# Validation and Constraints
+# Validation and constraints
 
-Traditionally, validation in SilverStripe has been mostly handled on the controller through [form validation](../forms).
+Traditionally, validation in SilverStripe has been mostly handled on the controller through [form validation](../forms/validation).
 
 While this is a useful approach, it can lead to data inconsistencies if the record is modified outside of the 
 controller and form context.
@@ -42,7 +42,7 @@ The return value of `validate()` is a [api:ValidationResult] object.
 		}
 	}
 
-## API Documentation
+## API documentation
 
 * [api:DataObject]
 * [api:ValidationResult];

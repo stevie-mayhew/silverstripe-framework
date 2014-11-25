@@ -111,7 +111,7 @@ You should see some output showing the PHP version. If you get something else, o
 
 ## Install SilverStripe
 
-  - [Download SilverStripe](http://silverstripe.org/downloads)
+  - [Download SilverStripe](http://www.silverstripe.org/software/downloads/)
   - Extract the download contents to **C:\Inetpub\wwwroot\silverstripe**
   - Open **inetmgr.exe**
   - Right click **Web Sites** and go to **New** > **Web Site**
@@ -149,4 +149,4 @@ Friendly URLs should now be working when you browse to your site.
 
 Remember that IIRF works on a per-virtual host basis. This means for each site you want IIRF to work for, you need to add a new entry to **Web Sites** in **inetmgr.exe**.
 
-Thanks to **kcd** for the rules: [http://www.silverstripe.org/installing-silverstripe/show/10488#post294415](http://www.silverstripe.org/installing-silverstripe/show/10488#post294415)
+Thanks to **kcd** for the rules: [http://www.silverstripe.org/installing-silverstripe/show/10488#post294415](http://www.silverstripe.org/community/forums/installing-silverstripe/show/10488#post294415)

@@ -38,11 +38,11 @@ Process to install is as follows:
   
         composer create-project silverstripe/installer /Applications/MAMP/htdocs/silverstripe/
 
- 4. You can now [use composer](http://doc.silverstripe.org/framework/en/installation/composer) to manage future SilverStripe updates and adding modules with a few easy commands.
+ 4. You can now [use composer](/getting_started/composer) to manage future SilverStripe updates and adding modules with a few easy commands.
 
 ###Package Download
 
-[Download](http://silverstripe.org/download) the latest SilverStripe installer package. Copy the tar.gz file to the 'Document Root' for MAMP - By Default its `/Applications/MAMP/htdocs`.
+[Download](http://www.silverstripe.org/software/download/) the latest SilverStripe installer package. Copy the tar.gz file to the 'Document Root' for MAMP - By Default its `/Applications/MAMP/htdocs`.
 Don't know what your Document Root is? Open MAMP Click `Preferences -> Apache`. 
 
 Extract the tar.gz file to a folder, e.g. `silverstripe/` (you always move the tar.gz file first and not the other way

@@ -93,7 +93,7 @@ You can also fetch one parameter at a time.
 	// returns '1'
 
 
-## URL Patterns
+## URL patterns
 
 The `[api:RequestHandler]` class will parse all rules you specify against the following patterns. The most specific rule
 will be the one followed for the response.
@@ -104,7 +104,7 @@ A rule must always start with alphabetical ([A-Za-z]) characters or a $Variable 
 
  | Pattern     | Description | 
  | ----------- | --------------- | 
- | `$`         | **Param Variable** - Starts the name of a paramater variable, it is optional to match this unless ! is used | 
+ | `$`         | **Param Variable** - Starts the name of a parameter variable, it is optional to match this unless ! is used | 
  | `!`         | **Require Variable** - Placing this after a parameter variable requires data to be present for the rule to match | 
  | `//`        | **Shift Point** - Declares that only variables denoted with a $ are parsed into the $params AFTER this point in the regex | 
 

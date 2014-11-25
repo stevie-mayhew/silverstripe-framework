@@ -3,7 +3,7 @@
 Composer is a package management tool for PHP that lets you install and upgrade SilverStripe and its modules.  Although installing Composer is one extra step, it will give you much more flexibility than just downloading the file from silverstripe.org. This is our recommended way of downloading SilverStripe and managing your code.
 
 For more information about Composer, visit [its website](http://getcomposer.org/).
-We also have separate instructions for [installing modules with Composer](/topics/modules).
+We also have separate instructions for [installing modules with Composer](/developer_guides/extending/modules).
 
 # Basic usage
 
@@ -35,8 +35,8 @@ If you already have composer installed you can update it by running:
 	
 Composer updates regularly, so you should run this command fairly often. These instructions assume you are running the latest version.
 
-## Installing Composer on Windows WAMP
-For those that use WAMP as a development environment, [detailed information is available on installing using Composer.](/installation/windows-wamp#install-wamp) 
+## Installing composer on Windows WAMP
+For those that use WAMP as a development environment, [detailed information is available on installing using Composer.](/getting_started/installation/windows/#composer) 
 
 ## Create a new site
 
@@ -56,7 +56,7 @@ You can also specify a version to download that version explicitly, i.e. this wi
 When `create-project` is used with a release version like above,
 it will try to get the code from archives instead of creating
 git repositories. If you're planning to contribute to SilverStripe,
-see [Using development versions](#using-development-versions).
+see [Using development versions](composer/#using-development-versions).
 
 ## Adding modules to your project
 
@@ -77,12 +77,12 @@ You can find other packages with the following command:
 
 	composer search silverstripe
 
-This will return a list of package names of the forum `vendor/package`.  If you prefer, you can search for pacakges on [packagist.org](https://packagist.org/search/?q=silverstripe).
+This will return a list of package names of the forum `vendor/package`.  If you prefer, you can search for packages on [packagist.org](https://packagist.org/search/?q=silverstripe).
 
-The second part after the colon, `*`, is a version string.  `*` is a good default: it will give you the latest version that works with the other modules you have installed.  Alternatively, you can specificy a specific version, or a constraint such as `>=3.0`.  For more information, read the [Composer documentation](http://getcomposer.org/doc/01-basic-usage.md#the-require-key).
+The second part after the colon, `*`, is a version string.  `*` is a good default: it will give you the latest version that works with the other modules you have installed.  Alternatively, you can specify a specific version, or a constraint such as `>=3.1`.  For more information, read the [Composer documentation](http://getcomposer.org/doc/01-basic-usage.md#the-require-key).
 
 <div class="warning" markdown="1">
-`master` is not a legal version string - it's a branch name.  These are different things.  The version string that would get you the branch is `dev-master`.  The version string that would get you a numeric branch is a little different.  The version string for the `3.0` branch is `3.0.x-dev`. 
+`master` is not a legal version string - it's a branch name.  These are different things.  The version string that would get you the branch is `dev-master`.  The version string that would get you a numeric branch is a little different.  The version string for the `3.1` branch is `3.1.x-dev`. 
 </div>
 
 ## Updating dependencies
@@ -95,9 +95,9 @@ To get the latest updates of the modules in your project, run this command:
 
 Updates to the required modules will be installed, and the `composer.lock` file will get updated with the specific commits of each of those.
 
-## Deploying projects with Composer
+## Deploying projects with composer
 
-When deploying projects with composer, you could just push the code and run `composer update`.  However, this is risky.  In particular, if you were referencing development dependencies and a change was made between your testing and your depoyment to production, you would end up deploying untested code.  Not cool!
+When deploying projects with composer, you could just push the code and run `composer update`.  However, this is risky.  In particular, if you were referencing development dependencies and a change was made between your testing and your deployment to production, you would end up deploying untested code.  Not cool!
 
 The `composer.lock` file helps with this.  It references the specific commits that have been checked out, rather than the version string.  You can run `composer install` to install dependencies from this rather than `composer.json`.
 
@@ -108,7 +108,7 @@ So, your deployment process, as it relates to Composer, should be as follows:
  * Deploy your project code base, using the deployment tool of your choice.
  * Run `composer install --no-dev -o` on your production version.
 
-# Dev Environments for Contributing Code {#contributing}
+# Dev Environments for contributing code {#contributing}
 
 So you want to contribute to SilverStripe? Fantastic! You can do this with composer too.
 You have to tell composer three things in order to be able to do this:
@@ -120,10 +120,10 @@ You have to tell composer three things in order to be able to do this:
 The first two steps are done as part of the initial create project using additional arguments.
 
 
-	composer create-project --keep-vcs --dev silverstripe/installer ./my/website/folder 3.0.x-dev
+	composer create-project --keep-vcs --dev silverstripe/installer ./my/website/folder 3.1.x-dev
 
-The process will take a bit longer, since all modules are checked out as full git repositories which you can work on. The command checks out from the 3.0 release line. To check out from master instead,
-replace `3.0.x-dev` with `dev-master` (more info on [composer version naming](http://getcomposer.org/doc/02-libraries.md#specifying-the-version)).
+The process will take a bit longer, since all modules are checked out as full git repositories which you can work on. The command checks out from the 3.1 release line. To check out from master instead,
+replace `3.1.x-dev` with `dev-master` (more info on [composer version naming](http://getcomposer.org/doc/02-libraries.md#specifying-the-version)).
 
 The `--keep-vcs` flag will make sure you have access to the git history of the installer and the requirements
 
@@ -139,7 +139,7 @@ and remove the `@stable` markers from the `silverstripe/cms` and `silverstripe/f
 Another `composer update --dev` call will now fetch from the development branch instead.
 Note that you can also convert an existing composer project with these steps.
 
-Please read the ["Contributing Code"](/misc/contributing/code) documentation to find out how to
+Please read the ["Contributing Code"](/contributing/code) documentation to find out how to
 create forks and send pull requests.
 
 # Advanced usage
@@ -153,8 +153,8 @@ To remove dependencies, or if you prefer seeing all your dependencies in a text 
 		"description": "The SilverStripe Framework Installer",
 		"require": {
 			"php": ">=5.3.2",
-			"silverstripe/cms": "3.0.*",
-			"silverstripe/framework": "3.0.*",
+			"silverstripe/cms": “3.1.*”,
+			"silverstripe/framework": “3.1.*”,
 			"silverstripe-themes/simple": "*"
 		},
 		"require-dev": {
@@ -231,9 +231,9 @@ For more information, read the ["Repositories" chapter of the Composer documenta
 
 ### Forks and branch names
 
-Generally, you should keep using the same pattern of branch names as the main repositories does. If your version is a fork of 3.0, then call the branch `3.0`, not `3.0-myproj` or `myproj`. Otherwise, the dependency resolution gets confused.
+Generally, you should keep using the same pattern of branch names as the main repositories does. If your version is a fork of 3.1, then call the branch `3.1`, not `3.1-myproj` or `myproj`. Otherwise, the dependency resolution gets confused.
 
-Sometimes, however, this isn't feasible.  For example, you might have a number of project forks stored in a single repository, such as your personal github fork of a project.  Or you might be testing/developing a feature branch.  Or it might just be confusing to other team members to call the branch of your modified version `3.0`.
+Sometimes, however, this isn't feasible.  For example, you might have a number of project forks stored in a single repository, such as your personal github fork of a project.  Or you might be testing/developing a feature branch.  Or it might just be confusing to other team members to call the branch of your modified version `3.1`.
 
 In this case, you need to use Composer's aliasing feature to specify how you want the project branch to be treated, when it comes to dependency resolution.	
 
@@ -243,14 +243,14 @@ Open `composer.json`, and find the module's `require`.  Then put `as (core versi
 		...
 		"require": {
 			"php": ">=5.3.2",
-			"silverstripe/cms": "3.0.2.1",
-			"silverstripe/framework": "dev-myproj as 3.0.x-dev",
+			"silverstripe/cms": "3.1.8",
+			"silverstripe/framework": "dev-myproj as 3.1.x-dev",
 			"silverstripe-themes/simple": "*"
 		},
 		...
 	}
 
-What this means is that when the `myproj` branch is checked out into a project, this will satisfy any dependencies that 3.0.x-dev would meet.  So, if another module has `"silverstripe/framework": ">=3.0.0"` in its dependency list, it won't get a conflict.
+What this means is that when the `myproj` branch is checked out into a project, this will satisfy any dependencies that 3.1.x-dev would meet.  So, if another module has `"silverstripe/framework": ">=3.1.0"` in its dependency list, it won't get a conflict.
 
 Both the version and the alias are specified as Composer versions, not branch names.  For the relationship between branch/tag names and Composer versions, read [the relevant Composer documentation](http://getcomposer.org/doc/02-libraries.md#specifying-the-version).
 
@@ -266,7 +266,7 @@ In order to use Composer on archive downloads from silverstripe.org, or other un
 an advanced workaround is to set the `COMPOSER_ROOT_VERSION` before every command 
 ([details](http://getcomposer.org/doc/03-cli.md#composer-root-version))
 
-### How do I convert an existing module to using Composer?
+### How do I convert an existing module to using composer?
 
 Simply decide on a [unique name and vendor prefix](https://packagist.org/about), 
 create a `composer.json`, and either commit it or send a pull request to the module author.
@@ -277,7 +277,7 @@ Then register the module on [packagist.org](http://packagist.org).
 
 ### How should I name my module?
 
-Follow the packagist.org advice on choosing a [unique name and vendor prefix](https://packagist.org/about). Please don't use the `silverstripe/<modulename>` vendor prefix, since that's reserved
+Follow the packagist.org advice on choosing a [unique name and vendor prefix](https://packagist.org/about). **Please don't use the "silverstripe/<modulename>" vendor prefix**, since that's reserved
 for modules produced by SilverStripe Ltd. In order to declare that your module is
 in fact a SilverStripe module, use the "silverstripe" tag in the composer.json file,
 and set the "type" to "silverstripe-module".
@@ -288,9 +288,9 @@ Themes are technically just "modules" which are placed in the `themes/` subdirec
 We denote a special type for them in the `composer.json` (`"type": "silverstripe-theme"`),
 which triggers their installation into the correct path.
 
-### How do I convert an existing project to Composer?
+### How do I convert an existing project to composer?
 
-The easiest way is to follow the [upgrading](/installation/upgrading) instructions
+The easiest way is to follow the [upgrading](/upgrading) instructions
 and switch to a newer release. Alternatively, copy the `composer.json` file from 
 a newer release, and adjust the version settings in the "require" section to your needs.
 You'll also need to update your webserver configuration
@@ -304,7 +304,7 @@ the process stays the same. If the live server hosts a git repository checkout,
 which is updated to push a newer version, you'll also need to run `composer install` afterwards.
 We recommend looking into [Composer "lock" files](http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file) for this purpose.
 
-### Can I keep using Downloads, Subversion Externals or Git Submodules?
+### Can I keep using downloads, subversion externals or git submodules?
 
 Yes and no. Composer comes with additional features such as 
 [autoloading](http://getcomposer.org/doc/01-basic-usage.md#autoloading) 

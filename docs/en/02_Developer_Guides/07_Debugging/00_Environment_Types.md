@@ -1,11 +1,11 @@
-title: Environment Types
+title: Environment types
 summary: Configure your SilverStripe environment to define how your web application behaves.
 
-# Environment Types
+# Environment types
 
 SilverStripe knows three different environment types (or "modes"). Each of the modes gives you different tools
-and behaviors. The environment is managed either through a [YML configuration file](../configuration) or in a 
-[environment configuration file](../../getting_started/environment_management).
+and behaviours. The environment is managed either through a [YML configuration file](../configuration) or in a 
+[environment configuration file](/getting_started/environment_management).
 
 The definition of setting an environment type in a `mysite/_config/app.yml` looks like
 

@@ -6,13 +6,12 @@ Describes the process followed for "core" releases (mainly the `framework` and `
 
 ## Release Maintainer
 
-The current maintainer responsible for planning and performing releases is Ingo Schommer (ingo at silverstripe dot com).
+The current maintainer responsible for planning and performing releases is Damian Mooyman (damian at silverstripe dot com).
 
 ## Release Planning
 
 Our most up-to-date release plans are typically in the ["framework" milestone](https://github.com/silverstripe/silverstripe-framework/issues/milestones) and ["cms" milestone](https://github.com/silverstripe/silverstripe-cms/issues/milestones).
-New features and API changes are typically discussed on the [core
-mailinglist](http://groups.google.com/group/silverstripe-dev). They are prioritized by the core team as tickets on 
+New features and API changes are typically discussed on the [core mailinglist](http://groups.google.com/group/silverstripe-dev). They are prioritised by the core team as tickets on 
 github.com. 
 
 Release dates are usually not published prior to the release, but you can get a good idea of the release status by
@@ -62,7 +61,7 @@ An example: Say we'd want to rename *BasicAuth::requireLogin()* to follow our co
 *  *2.3* would've marked the method as *@deprecated*, and documents it as an *API CHANGE* in our
 [changelog](/changelogs). The old method continues to work, but will throw an *E_USER_NOTICE*.
 *  *2.4* would've removed the method, also documenting it as an *API CHANGE*, and mentioning it in the
-[upgrading](/installation/upgrading) guidelines.
+[upgrading](/upgrading) guidelines.
 
 Exceptions to the deprecation cycle are APIs that have been moved into their own module, and continue to work with the
 new minor release. These changes can be performed in a single minor release without a deprecation period.
@@ -70,7 +69,7 @@ new minor release. These changes can be performed in a single minor release with
 ### Micro releases
 
 Micro releases are issued about every two months for the latest release, typically for security reasons.
-You can safely upgrade to those releases (after reading the [upgrading](/upgrading/) guidelines).
+You can safely upgrade to those releases (after reading the [upgrading](/upgrading) guidelines).
 For example, *2.3.6* was released in February 2010, followed by *2.3.7* in March 2010.
 
 ### Supported versions
@@ -87,7 +86,7 @@ micro release.
 ## Deprecation
 
 Needs of developers (both on core framework and custom projects) can outgrow the capabilities
-of a certain API. Existing APIs might turn out to be hard to understand, maintain, test or stabilize.
+of a certain API. Existing APIs might turn out to be hard to understand, maintain, test or stabilise.
 In these cases, it is best practice to "refactor" these APIs into something more useful.
 SilverStripe acknowledges that developers have built a lot of code on top of existing APIs,
 so we strive for giving ample warning on any upcoming changes through a "deprecation cycle".
@@ -138,15 +137,15 @@ timeline and ask the reporter to keep the issue confidential until we announce i
 *  Halt all other development as long as is needed to develop a fix, including patches against the current and one
 previous major release (if applicable).
 *  We will inform you about resolution and [announce](http://groups.google.com/group/silverstripe-announce) a 
-[new release](http://silverstripe.org/security-releases/) publically.
+[new release](http://www.silverstripe.org/software/download/security-releases/) publicly.
 
 You can help us determine the problem and speed up responses by providing us with more information on how to reproduce
-the issue: SilverStripe version (incl. any installed modules), PHP/webserver version and configuration, anonymized
+the issue: SilverStripe version (incl. any installed modules), PHP/webserver version and configuration, anonymised
 webserver access logs (if a hack is suspected), any other services and web packages running on the same server.
 
 ### Severity rating
 
-Each [security release](http://www.silverstripe.org/security-releases/) includes an overall severity rating and one for 
+Each [security release](http://www.silverstripe.org/software/download/security-releases/) includes an overall severity rating and one for 
 each vulnerability. The rating indicates how important an update is:
 
 | Severity      | Description |

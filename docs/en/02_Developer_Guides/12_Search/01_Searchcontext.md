@@ -11,7 +11,7 @@ The default output of a [api:SearchContext] is either a [api:SQLQuery] object fo
 [api:DataObject] instance.
 
 <div class="notice" markdown="1">
-[api:SearchContext] is mainly used by [ModelAdmin](../customising_the_cms/modeladmin).
+[api:SearchContext] is mainly used by [ModelAdmin](../developer_guides/customising_the_admin_interface/modeladmin).
 </div>
 
 ## Usage
@@ -29,7 +29,7 @@ Defining search-able fields on your DataObject.
 	   );
 	}
 
-## Customizing fields and filters
+## Customising fields and filters
 
 In this example we're defining three attributes on our MyDataObject subclass: `PublicProperty`, `HiddenProperty`
 and `MyDate`. The attribute `HiddenProperty` should not be searchable, and `MyDate` should only search for dates
@@ -108,12 +108,12 @@ the `$fields` constructor parameter.
 	}
 
 
-## Related Documentation
+## Related documentation
 
-* [ModelAdmin](../customising_the_cms/modeladmin)
+* [ModelAdmin](../developer_guides/customising_the_admin_interface/modeladmin)
 * [Tutorial: Site Search](/tutorials/site_search)
 
-## API Documentation
+## API documentation
 
 * [api:SearchContext]
 * [api:DataObject]

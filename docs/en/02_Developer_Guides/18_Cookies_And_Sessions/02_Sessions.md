@@ -15,14 +15,14 @@ unit-testing, you can create multiple Controllers, each with their own session.
 	:::php
 	Session::set('MyValue', 6);
 
-Saves the value of to session data. You can also save arrays or serialized objects in session (but note there may be 
+Saves the value of to session data. You can also save arrays or serialised objects in session (but note there may be 
 size restrictions as to how much you can save).
 
 	:::php
 	// saves an array
 	Session::set('MyArrayOfValues', array('1','2','3'));
 
-	// saves an object (you'll have to unserialize it back)
+	// saves an object (you'll have to unserialise it back)
 	$object = new Object();
 	Session::set('MyObject', serialize($object));
  

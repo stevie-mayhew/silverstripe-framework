@@ -1,7 +1,7 @@
-title: Partial Caching
+title: Partial caching
 summary: Cache SilverStripe templates to reduce database queries.
 
-# Partial Caching
+# Partial caching
 
 Partial caching is a feature that allows the caching of just a portion of a page. 
 
@@ -74,7 +74,7 @@ Note the use of both `.max(LastEdited)` and `.count()` - this takes care of both
 edited since the cache was last built, and also when an object has been deleted since the cache was last built.
 </div>
 
-We can also calculate aggregates on relationships. A block that shows the current member's favorites needs to update
+We can also calculate aggregates on relationships. A block that shows the current member's favourites needs to update
 whenever the relationship `Member::$has_many = array('Favourites' => Favourite')` changes.
 
 	:::ss
@@ -106,7 +106,7 @@ Then using that function in the cache key:
 ## Cache blocks and template changes
 
 In addition to the key elements passed as parameters to the cached control, the system automatically includes the
-template name and a sha1 hash of the contents of the cache block in the key. This means that any time the template is
+template name and a SHA1 hash of the contents of the cache block in the key. This means that any time the template is
 changed the cached contents will automatically refreshed.
 
 ## Purposely stale data
@@ -159,7 +159,7 @@ To cache the contents of a page for all anonymous users, but dynamically calcula
 
 ## Uncached
 
-Yhe template tag 'uncached' can be used - it is the exact equivalent of a cached block with an if condition that always 
+The template tag 'uncached' can be used - it is the exact equivalent of a cached block with an if condition that always 
 returns false. The key and conditionals in an uncached tag are ignored, so you can easily temporarily disable a 
 particular cache block by changing just the tag, leaving the key and conditional intact.
 

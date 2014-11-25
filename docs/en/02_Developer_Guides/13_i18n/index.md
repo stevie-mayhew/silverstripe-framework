@@ -3,9 +3,9 @@ summary: Display templates and PHP code in different languages based on the pref
 
 # i18n
 
-The i18n class (short for "internationalization") in SilverStripe enables you to display templates and PHP code in
+The i18n class (short for "internationalisation") in SilverStripe enables you to display templates and PHP code in
 different languages based on your global settings and the preferences of your website users. This process is also known
-as l10n (short for "localization").
+as l10n (short for "localisation").
 
 For translating any content managed through the CMS or stored in the database, please use the 
 [translatable](http://github.com/silverstripe/silverstripe-translatable) module.
@@ -77,10 +77,10 @@ This means all formats are defined in
 [ISO date format](http://framework.zend.com/manual/en/zend.date.constants.html#zend.date.constants.selfdefinedformats),
 not PHP's built-in [date()](http://nz.php.net/manual/en/function.date.php).
 
-### Language Names
+### Language names
 
 SilverStripe comes with a built-in list of common languages, listed by locale and region.
-They can be accessed via the `i18n.common_languages` and `i18n.common_locales` [config setting](/topics/configuration).
+They can be accessed via the `i18n.common_languages` and `i18n.common_locales` [config setting](../configuration).
 
 In order to add a value, add the following to your `config.yml`:
 
@@ -105,7 +105,7 @@ By default, URLs for pages in SilverStripe (the `SiteTree->URLSegment` property)
 are automatically reduced to the allowed allowed subset of ASCII characters.
 If characters outside this subset are added, they are either removed or (if possible) "transliterated".
 This describes the process of converting from one character set to another
-while keeping characters recognizeable. For example, vowels with french accents
+while keeping characters recognisable. For example, vowels with french accents
 are replaced with their base characters, `pâté` becomes `pate`.
 
 In order to allow for so called "multibyte" characters outside of the ASCII subset,
@@ -114,7 +114,7 @@ by setting `URLSegmentFilter.default_use_transliterator` to `false` in your YAML
 
 Please refer to [W3C: Introduction to IDN and IRI](http://www.w3.org/International/articles/idn-and-iri/) for more details.
 
-### i18n in Form Fields
+### i18n in form fields
 
 Date- and time related form fields support i18n ([api:DateField], [api:TimeField], [api:DatetimeField]).
 
@@ -125,7 +125,7 @@ Date- and time related form fields support i18n ([api:DateField], [api:TimeField
 	$field->setConfig('dateformat', 'dd. MMMM YYYY'); // sets typical 'de_DE' date format, shows as "23. Juni 1982"
 
 Defaults can be applied globally for all field instances through the `DateField.default_config`
-and `TimeField.default_config` [configuration arrays](/topics/configuration).
+and `TimeField.default_config` [configuration arrays](../configuration).
 If no 'locale' default is set on the field, [api:i18n::get_locale()] will be used.
 
 **Important:** Form fields in the CMS are automatically configured according to the profile settings for the logged-in user (`Member->Locale`, `Member->DateFormat` and `Member->TimeFormat`). This means that in most cases,
@@ -140,12 +140,12 @@ The field tries to translate the date formats and locales into a format compatib
 	$field = new DateField();
 	$field->setLocale('de_AT'); // set Austrian/German locale
 	$field->setConfig('showcalendar', true);
-	$field->setConfig('jslocale', 'de'); // jQuery UI only has a generic German localization
+	$field->setConfig('jslocale', 'de'); // jQuery UI only has a generic German localisation
 	$field->setConfig('dateformat', 'dd. MMMM YYYY'); // will be transformed to 'dd. MM yy' for jQuery
 
 ## Translating text
 
-Adapting a module to make it localizable is easy with SilverStripe. You just need to avoid hardcoding strings that are
+Adapting a module to make it localisable is easy with SilverStripe. You just need to avoid hardcoding strings that are
 language-dependent and use a translator function call instead.
 
 	:::php
@@ -159,7 +159,7 @@ All strings passed through the `_t()` function will be collected in a separate l
 
 ### The _t() function
 
-The `_t()` function is the main gateway to localized text, and takes four parameters, all but the first being optional.
+The `_t()` function is the main gateway to localised text, and takes four parameters, all but the first being optional.
 It can be used to translate strings in both PHP files and template files. The usage for each case is described below.
 
  * **$entity:** Unique identifier, composed by a namespace and an entity name, with a dot separating them. Both are arbitrary names, although by convention we use the name of the containing class or template. Use this identifier to reference the same translation elsewhere in your code.
@@ -169,14 +169,14 @@ are very context dependent. This parameter allows the developer to convey this i
 to the translator.
  * **$array::** (optional) An array of injecting variables into the second parameter
 
-#### Usage in PHP Files
+#### Usage in PHP files
 
 	:::php
 
 	// Simple string translation
 	_t('LeftAndMain.FILESIMAGES','Files & Images');
 
-	// Using the natural languate comment parameter to supply additional context information to translators
+	// Using the natural language comment parameter to supply additional context information to translators
 	_t('LeftAndMain.HELLO','Site content','Menu title');
 
 	// Using injection to add variables into the translated strings.
@@ -186,7 +186,7 @@ to the translator.
 		array('value' => $itemRestored)
 	);
 
-#### Usage in Template Files
+#### Usage in template files
 
 <div class="hint" markdown='1'>
 The preferred template syntax has changed somewhat since [version 2.x](http://doc.silverstripe.org/framework/en/2.4/topics/i18n#usage-2).
@@ -203,13 +203,13 @@ the PHP version of the function.
 	// Simple string translation
 	<%t Namespace.Entity "String to translate" %>
 
-	// Using the natural languate comment parameter to supply additional context information to translators
+	// Using the natural language comment parameter to supply additional context information to translators
 	<%t SearchResults.NoResult "There are no results matching your query." is "A message displayed to users when the search produces no results." %>
 
 	// Using injection to add variables into the translated strings (note that $Name and $Greeting must be available in the current template scope).
 	<%t Header.Greeting "Hello {name} {greeting}" name=$Name greeting=$Greeting %>
 
-#### Caching in Template Files with locale switching
+#### Caching in template files with locale switching
 
 When caching a `<% loop %>` or `<% with %>` with `<%t params %>`. It is important to add the Locale to the cache key 
 otherwise it won't pick up locale changes.
@@ -232,10 +232,10 @@ If you want to run the text collector for just one module you can use the 'modul
 `http://localhost/dev/tasks/i18nTextCollectorTask/?module=cms`
 
 <div class="hint" markdown='1'>
-You'll need to install PHPUnit to run the text collector (see [testing-guide](/topics/testing)).
+You'll need to install PHPUnit to run the text collector (see [testing-guide](../testing)).
 </div>
 
-## Module Priority
+## Module priority
 
 The order in which i18n strings are loaded from modules can be quite important, as it is pretty common for a site
 developer to want to override the default i18n strings from time to time.  Because of this, you will sometimes need to specify the loading priority of i18n modules.
@@ -249,7 +249,7 @@ By default, the language files are loaded from modules in this order:
 
 This default order is configured in `framework/_config/i18n.yml`.  This file specifies two blocks of module ordering: `basei18n`, listing admin, and framework, and `defaulti18n` listing all other modules.
 
-To create a custom module order, you need to specify a config fragment that inserts itself either after or before those items.  For example, you may have a number of modules that have to come after the framework/admin, but before anyhting else.  To do that, you would use this
+To create a custom module order, you need to specify a config fragment that inserts itself either after or before those items.  For example, you may have a number of modules that have to come after the framework/admin, but before anything else.  To do that, you would use this
 
 	---
 	Name: customi18n
@@ -315,7 +315,7 @@ in your `mysite/_config.php`:
 		9 // priority lower than standard translator
 	);
 
-## Javascript Usage
+## Javascript usage
 
 The i18n system in JavaScript is similar to its PHP equivalent.
 Languages are typically stored in `<my-module-dir>/javascript/lang`.
@@ -333,7 +333,7 @@ Just point it to a directory instead of a file, and the class will figure out th
 	Requirements::add_i18n_javascript('<my-module-dir>/javascript/lang');
 
 
-###  Translation Tables in JavaScript
+###  Translation tables in javaScript
 
 Translation tables are automatically included as required, depending on the configured locale in `i18n::get_locale()`.
 As a fallback for partially translated tables we always include the master table (`en.js`) as well.
@@ -362,13 +362,13 @@ For most core modules, these files are generated by a
 with the actual source files in a JSON
 format which can be processed more easily by external translation providers (see `javascript/lang/src`).
 
-### Basic Usage
+### Basic usage
 
 	:::js
 	alert(ss.i18n._t('MYMODULE.MYENTITY'));
 
 
-### Advanced Use
+### Advanced use
 
 The `ss.i18n` object contain a couple functions to help and replace dynamic variable from within a string.
 
@@ -408,7 +408,7 @@ The `ss.i18n` object contain a couple functions to help and replace dynamic vari
 
 ## Links
 
- * [Help to translate](/misc/contribute/translation) - Instructions for online collaboration to translate core
- * [Help to translate](/misc/translation-process) - Instructions for adding translation to your own modules
+ * [Help to translate](/contributing/translations) - Instructions for online collaboration to translate core
+ * [Help to translate](/contributing/translation_process) - Instructions for adding translation to your own modules
  * [http://www.i18nguy.com/](http://www.i18nguy.com/)
  * [balbus.tk i18n notes](http://www.balbus.tk/internationalize)

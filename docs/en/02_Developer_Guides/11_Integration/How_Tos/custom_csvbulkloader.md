@@ -1,8 +1,9 @@
 title: A custom CSVBulkLoader instance
+summary: An implementation of a custom `CSVBulkLoader` loader.
 
 # How to: A custom CSVBulkLoader instance
 
-A an implementation of a custom `CSVBulkLoader` loader. In this example. we're provided with a unique CSV file 
+An implementation of a custom `CSVBulkLoader` loader. In this example we're provided with a unique CSV file 
 containing a list of football players and the team they play for. The file we have is in the format like below.
 
 	"SpielerNummer", "Name", "Geburtsdatum", "Gruppe"

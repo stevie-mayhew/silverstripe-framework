@@ -4,8 +4,8 @@
 
 CSV import can be easily achieved through PHP's built-in `fgetcsv()` method,
 but this method doesn't know anything about your datamodel. In SilverStripe,
-this can be handled through the a specialized CSV importer class that can
-be customized to fit your data.
+this can be handled through the a specialised CSV importer class that can
+be customised to fit your data.
 
 ## The CsvBulkLoader class
 
@@ -63,7 +63,7 @@ below the search form on the left.
 
 ## Import through a custom controller
 
-You can have more customized logic and interface feedback through a custom controller. Let's create a simple upload form (which is used for `MyDataObject` instances). You can access it through  `http://localhost/MyController/?flush=all`.
+You can have more customised logic and interface feedback through a custom controller. Let's create a simple upload form (which is used for `MyDataObject` instances). You can access it through  `http://localhost/MyController/?flush=all`.
 
 	:::php
 	<?php

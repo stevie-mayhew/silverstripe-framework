@@ -63,7 +63,7 @@ the dir - see PHP realpath()):
 configuration commands that use those defines as their arguments.  If you are curious, open up
 `framework/conf/ConfigureFromEnv.php` and see for yourself!
 
-### An Example
+### An example
 
 This is my `_ss_environment.php` file. I have it placed in `/var`, as each of the sites are in a subfolder of `/var`.
 
@@ -99,7 +99,7 @@ This is my `_ss_environment.php` file. I have it placed in `/var`, as each of th
 	
 	// This is used by sake to know which directory points to which URL
 	global $_FILE_TO_URL_MAPPING;
-	$_FILE_TO_URL_MAPPING['/var/www'] = 'http://simon.geek.nz';
+	$_FILE_TO_URL_MAPPING['/var/www'] = 'http://localhost';
 
 ## Available Constants
 

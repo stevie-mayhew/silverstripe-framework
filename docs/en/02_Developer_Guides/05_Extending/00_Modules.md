@@ -46,19 +46,19 @@ Modules should exist in the root folder of your SilverStripe installation.
 
 <div class="info" markdown="1">
 The root directory is the one containing the *framework* and *mysite* subdirectories. If your site is installed under
-`/Users/sam.minnee/Sites/website/` your modules will go in the `/Users/sam.minnee/Sites/website/` directory.
+`/var/www/website/` your modules will go in the `/var/www/website/` directory.
 </div>
 
 <div class="notice" markdown="1">
 After you add or remove modules make sure you rebuild the database by going to http://yoursite.com/dev/build?flush=1
 </div>
 
-### From Composer
+### From composer
 
-Our preferred way to manage module dependencies is through the [Composer](http://getcomposer.org) package manager. It 
+Our preferred way to manage module dependencies is through the [composer](http://getcomposer.org) package manager. It 
 enables you to install modules from specific versions, checking for compatibilities between modules and even allowing 
 to track development branches of them. To install modules using this method, you will first need to setup SilverStripe
-with [Composer](../../getting_started/composer).
+with [Composer](/getting_started/composer).
 
 Each module has a unique identifier, consisting of a vendor prefix and name. For example, the "blog" module has the 
 identifier `silverstripe/blog` as it is published by *silverstripe*. To install, use the following command executed in 
@@ -100,8 +100,3 @@ operate in other structures, paths to static files such as CSS or JavaScript won
 
 See the [How to Publish a SilverStripe Module](how_tos/publish_a_module) for details on how to publish your SilverStripe
 modules with the community
-
-
-## Related
-
-* [How to Publish a SilverStripe Module](how_tos/publish_a_module)

@@ -1,12 +1,12 @@
-title: Access Control
-summary: Define allowed behavior and add permission based checks to your Controllers.
+title: Access control
+summary: Define allowed behaviour and add permission based checks to your Controllers.
 
-# Access Control
+# Access control
 
 Within your controllers you should declare and restrict what people can see and do to ensure that users cannot run 
 actions on the website they shouldn't be able to. 
 
-## Allowed Actions
+## Allowed actions
 
 Any action you define on a controller must be defined in a `$allowed_actions` static array. This prevents users from
 directly calling methods that they shouldn't.
@@ -141,7 +141,7 @@ as an `allowed_action`.
 		}
 	}
 
-## Action Level Checks
+## Action level checks
 
 Each method responding to a URL can also implement custom permission checks, e.g. to handle responses conditionally on 
 the passed request data.
@@ -169,11 +169,11 @@ This is recommended as an addition for `$allowed_actions`, in order to handle mo
 replacement.
 </div>
 
-## Controller Level Checks
+## Controller level checks
 
 After checking for allowed_actions, each controller invokes its `init()` method, which is typically used to set up 
 common state, If an `init()` method returns a `SS_HTTPResponse` with either a 3xx or 4xx HTTP status code, it'll abort 
-execution. This behavior can be used to implement permission checks.
+execution. This behaviour can be used to implement permission checks.
 
 <div class="info" markdown="1">
 `init` is called for any possible action on the controller and before any specific method such as `index`.
@@ -194,10 +194,10 @@ execution. This behavior can be used to implement permission checks.
 		}
 	}
 
-## Related Documentation
+## Related documentation
 
 * [Security](../security)
 
-## API Documentation
+## API documentation
 
 * [api:Controller]

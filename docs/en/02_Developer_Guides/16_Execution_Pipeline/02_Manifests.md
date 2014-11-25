@@ -30,7 +30,7 @@ they require a powerful traversal tool: `[api:SS_FileFinder]`.
 The class provides filtering abilities for files and folders, as well as
 callbacks for recursive traversal. Each manifest has its own implementation,
 for example `[api:ManifestFileFinder]`, adding more domain specific filtering
-like including themes, or excluding testss.
+like including themes, or excluding tests.
 
 ## PHP Class Manifest
 
@@ -64,19 +64,19 @@ a `tests/` folder, unless tests are executed.
 
 The `[api:SS_TemplateManifest]` class builds a manifest of all templates present in a directory,
 in both modules and themes. Templates in `tests/` folders are automatically excluded.
-The chapter on [template inheritance](../templates/template-inheritance) provides more details
+The chapter on [template inheritance](../templates/template_inheritance) provides more details
 on its operation.
 
 ## Config Manifest
 
 The `[api:SS_ConfigManifest]` loads builds a manifest of configuration items,
 for both PHP and YAML. It also takes care of ordering and merging configuration fragments.
-The chapter on [configuration](/topics/configuration) has more details.
+The chapter on [configuration](../configuration) has more details.
 
 ## Flushing
 
 If a `?flush=1` query parameter is added to a URL, a call to `flush()` will be triggered
-on any classes that implement the [Flushable](/reference/flushable) interface.
+on any classes that implement the [Flushable](flushable) interface.
 This enables developers to clear [manifest caches](manifests),
 for example when adding new templates or PHP classes.
 Note that you need to be in [dev mode](/getting_started/environment_management)

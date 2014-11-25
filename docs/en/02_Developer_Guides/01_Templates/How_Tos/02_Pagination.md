@@ -1,6 +1,6 @@
-title: How to Create a Paginated List
+title: How to create a paginated list
 
-# How to Create a Paginated List
+# How to create a paginated list
 
 In order to create a paginated list, create a method on your controller that first creates a `SS_List` that contains
 all your record, then wraps it in a [api:PaginatedList] object. The `PaginatedList` object should also passed the 
@@ -68,7 +68,7 @@ switch between pages:
 If there is more than one page, this block will render a set of pagination controls in the form 
 `[1] ... [3] [4] [5] [6] [7] ... [10]`.
 
-## Paginating Custom Lists
+## Paginating custom lists
 
 In some situations where you are generating the list yourself, the underlying list will already contain only the items 
 that you wish to display on the current page. In this situation the automatic limiting done by [api:PaginatedList]
@@ -88,7 +88,7 @@ when using custom lists.
 	$pages = new PaginatedList(Page::get(), $this->request);
 	$pages->setPageLength(25);
 
-## Template Variables
+## Template variables
 
 | Variable | Description |
 | -------- | -------- |
@@ -103,7 +103,7 @@ when using custom lists.
 | `$CurrentBool` | Returns true if you're currently on that page |
 
 
-## API Documentation
+## API documentation
 
 * [api:PaginatedList]
 

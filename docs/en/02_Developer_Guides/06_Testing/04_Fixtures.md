@@ -111,7 +111,7 @@ We can also declare the relationships conversely. Another way we could write the
 			Players: =>Player.joe,=>Player.jack
 
 The database is populated by instantiating `DataObject` objects and setting the fields declared in the `YAML`, then 
-calling `write()` on those objects. Take for instance the `hurricances` record in the `YAML`. It is equivalent to 
+calling `write()` on those objects. Take for instance the `hurricanes` record in the `YAML`. It is equivalent to 
 writing:
 
 	:::php
@@ -231,7 +231,7 @@ After we've created this object in the factory, `getId` is used to retrieve it b
 
 ### Default Properties
 
-Blueprints can be overwritten in order to customize their behavior. For example, if a Fixture does not provide a Team
+Blueprints can be overwritten in order to customise their behaviour. For example, if a Fixture does not provide a Team
 name, we can set the default to be `Unknown Team`.
 
 	:::php

@@ -5,7 +5,7 @@ summary: Capture and store user information through web forms.
 
 ## Overview
 
-This tutorial is intended to be a continuation of the first two tutorials ([first tutorial](/tutorials/building_a_basic_site), [second tutorial](/tutorials/extending_a_basic_site)). In this tutorial we will build on the site we developed in the earlier tutorials and explore forms in SilverStripe. We will look at custom coded forms: forms which need to be written in PHP.
+This tutorial is intended to be a continuation of the first two tutorials ([first tutorial](building_a_basic_site), [second tutorial](extending_a_basic_site)). In this tutorial we will build on the site we developed in the earlier tutorials and explore forms in SilverStripe. We will look at custom coded forms: forms which need to be written in PHP.
 
 Instead of using a custom coded form, we could use the [userforms module](http://addons.silverstripe.org/add-ons/silverstripe/userforms). This module allows users to construct forms via the CMS. A form created this way is much quicker to implement, but also lacks the flexibility of a coded form. 
 
@@ -171,7 +171,7 @@ All going according to plan, if you visit [http://localhost/your_site_name/home/
 Great! We now have a browser poll form, but it doesn't actually do anything. In order to make the form work, we have to implement the 'doBrowserPoll()' method that we told it about.
 
 First, we need some way of saving the poll submissions to the database, so we can retrieve the results later. We can do this by creating a new object that extends from `[api:DataObject]`.
-If you recall, in the [second tutorial](/tutorials/extending_a_basic_site) we said that all objects that inherit from DataObject and have their own fields are stored in tables the database. Also recall that all pages extend DataObject indirectly through `[api:SiteTree]`. Here instead of extending SiteTree (or `[api:Page]`) to create a page type, we will extend `[api:DataObject]` directly:
+If you recall, in the [second tutorial](extending_a_basic_site) we said that all objects that inherit from DataObject and have their own fields are stored in tables the database. Also recall that all pages extend DataObject indirectly through `[api:SiteTree]`. Here instead of extending SiteTree (or `[api:Page]`) to create a page type, we will extend `[api:DataObject]` directly:
 
 **mysite/code/BrowserPollSubmission.php**
 
@@ -271,7 +271,7 @@ Although the form is not shown, you'll still see the 'Browser Poll' heading. We'
 
 Now that we're collecting data, it would be nice to show the results on the website as well. We could simply output every vote, but that's boring. Let's group the results by browser, through the SilverStripe data model.
 
-In the [second tutorial](/tutorials/extending_a_basic_site), we got a collection of news articles for the home page by using the 'ArticleHolder::get()' function, which returns a `[api:DataList]`. We can get all submissions in the same fashion, through `BrowserPollSubmission::get()`. This list will be the starting point for our result aggregation.
+In the [second tutorial](extending_a_basic_site), we got a collection of news articles for the home page by using the 'ArticleHolder::get()' function, which returns a `[api:DataList]`. We can get all submissions in the same fashion, through `BrowserPollSubmission::get()`. This list will be the starting point for our result aggregation.
 
 Create the function 'BrowserPollResults' on the *HomePage_Controller* class.
 
@@ -354,4 +354,4 @@ We use the normal tactic of putting the data into an unordered list and using CS
 
 In this tutorial we have explored custom php forms, and displayed result sets through Grouped Lists. We have briefly covered the different approaches to creating and using forms. Whether you decide to use the [userforms module](http://addons.silverstripe.org/add-ons/silverstripe/userforms) or create a form in PHP depends on the situation and flexibility required.
 
-[Next Tutorial >>](/tutorials/site_search)
+[Next Tutorial >>](site_search)

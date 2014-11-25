@@ -1,6 +1,6 @@
-title: Disable Anchor Rewriting
+title: Disable anchor rewriting
 
-# Disable Anchor Rewriting
+# Disable anchor rewriting
 
 Anchor links are links with a "#" in them. A frequent use-case is to use anchor links to point to different sections of 
 the current page.  For example, we might have this in our template:

@@ -4,7 +4,7 @@ summary: An overview of the steps involved in delivering a SilverStripe web page
 
 ## Introduction
 
-In order to transform a HTTP request or a commandline exeuction into a response,
+In order to transform a HTTP request or a commandline execution into a response,
 SilverStripe needs to boot its core and run through several stages of processing.
 
 ## Request Rewriting
@@ -95,8 +95,8 @@ All requests go through `framework/main.php`, which sets up the execution enviro
  * Loads the Composer PHP class autoloader
  * Hands control over to `[api:Director]`
 
-While you usually don't need to modify the bootstrap on this level, some deeper customizations like
-adding your own manifests or a performance-optimized routing might require it.
+While you usually don't need to modify the bootstrap on this level, some deeper customisations like
+adding your own manifests or a performance-optimised routing might require it.
 An example of this can be found in the ["staticpublisher" module](https://github.com/silverstripe-labs/silverstripe-staticpublisher/blob/master/main.php).
 The modules instructs web servers to route through its own `main.php` to determine which requests can be cached
 before handing control off to SilverStripe's own `main.php`.
@@ -108,7 +108,7 @@ and determines the controller, action and any argument to be used ([Routing](../
 
  * Creates a `[api:SS_HTTPRequest]` object containing all request and environment information
  * The [session](../cookies_and_sessions/sessions) holds an abstraction of PHP session
- * Instantiates a [controller](../Controllers) object
+ * Instantiates a [controller](../controllers) object
  * The `[api:Injector]` is first referenced, and asks the registered 
    [RequestFilter](../controller/request_filters)
    to pre-process the request object (see below)
@@ -123,14 +123,14 @@ further filtering before content is sent to the end user
 
 The framework provides the ability to hook into the request both before and 
 after it is handled to allow binding custom logic. This can be used
-to transform or filter request data, instanciate helpers, execute global logic,
+to transform or filter request data, instantiate helpers, execute global logic,
 or even short-circuit execution (e.g. to enforce custom authentication schemes).
 The ["Request Filters" documentation](../controller/request_filters) shows you how.
 
 ## Flushing Manifests
 
 If a `?flush=1` query parameter is added to a URL, a call to `flush()` will be triggered
-on any classes that implement the [Flushable](/reference/flushable) interface.
+on any classes that implement the [Flushable](flushable) interface.
 This enables developers to clear [manifest caches](manifests),
 for example when adding new templates or PHP classes.
 Note that you need to be in [dev mode](/getting_started/environment_management)

@@ -7,7 +7,7 @@ The requirements class takes care of including CSS and JavaScript into your appl
 coding any references in the `<head>` tag of your template, as it enables a more flexible handling through the 
 [api:Requirements] class.
 
-## Template Requirements API
+## Template requirements API
 
 **mysite/templates/Page.ss**
 
@@ -20,7 +20,7 @@ coding any references in the `<head>` tag of your template, as it enables a more
 Requiring assets from the template is restricted compared to the PHP API.
 </div>
 
-## PHP Requirements API
+## PHP requirements API
 
 It is common practice to include most Requirements either in the *init()*-method of your [controller](../controller), or
 as close to rendering as possible (e.g. in `[api:FormField]`.
@@ -38,7 +38,7 @@ as close to rendering as possible (e.g. in `[api:FormField]`.
 		}
 	}
 
-### CSS Files
+### CSS files
 
 	:::php
 	Requirements::css($path, $media);
@@ -49,7 +49,7 @@ If you're using the CSS method a second argument can be used. This argument defi
 	:::php
 	Requirements::css("cms/css/TreeSelector.css", "screen,projection");
 
-### Javascript Files
+### Javascript files
 
 	:::php
 	Requirements::javascript($path);
@@ -66,7 +66,7 @@ JavaScript in a separate file and instead load, via search and replace, several 
 
 In this example, `editor.template.js` is expected to contain a replaceable variable expressed as `$EditorCSS`.
 
-### Custom Inline CSS or Javascript
+### Custom inline CSS or javascript
 
 You can also quote custom script directly. This may seem a bit ugly, but is useful when you need to transfer some kind
 of 'configuration' from the database in a raw format.  You'll need to use the `heredoc` syntax to quote JS and CSS, 
@@ -86,7 +86,7 @@ language.
 	CSS
 	);
 
-## Combining Files
+## Combining files
 
 You can concatenate several CSS or javascript files into a single dynamically generated file. This increases performance
 by reducing HTTP requests.
@@ -161,7 +161,7 @@ The CMS also uses the `Requirements` system, and its operation can be affected b
 limiting the scope of your blocking operations, e.g. in `init()` of your controller.
 </div>
 
-## Inclusion Order
+## Inclusion order
 
 Requirements acts like a stack, where everything is rendered sequentially in the order it was included. There is no way
 to change inclusion-order, other than using *Requirements::clear* and rebuilding the whole set of requirements. 
@@ -187,6 +187,6 @@ already loaded, then, it's inserted before the first `<script>` tag. If this cau
 if there is an earlier script tag.
 
 
-## API Documentation
+## API documentation
 
 * [api:Requirements]

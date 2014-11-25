@@ -1,7 +1,7 @@
-title: Form Transformations
-summary: Provide read-only and disabled views of your Form data.
+title: Form transformations
+summary: Provide read-only and disabled views of your form data.
 
-# Read-only and Disabled Forms
+# Read-only and disabled forms
 
 [api:Form] and [api:FormField] instances can be turned into a read-only version for things like confirmation pages or 
 when certain fields cannot be edited due to permissions. Creating the form is done the same way and markup is similar, 

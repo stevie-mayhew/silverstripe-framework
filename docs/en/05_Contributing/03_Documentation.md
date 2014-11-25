@@ -12,15 +12,15 @@ Modifying documentation requires basic [PHPDoc](http://en.wikipedia.org/wiki/PHP
 ## Editing online
 
 The easiest way of making a change to the documentation is by clicking the "Edit this page" link at the bottom of the 
-page you want to edit. Alternativly, you can find the appropriate .md file in the 
+page you want to edit. Alternatively, you can find the appropriate .md file in the 
 [github.com/silverstripe/silverstripe-framework](https://github.com/silverstripe/silverstripe-framework/tree/master/docs/) 
 repository and press the "edit" button. **You will need a free GitHub account to do this**. 
 
 
  * After you have made your change, describe it in the "commit summary" and "extended description" fields below, and 
  press "Commit Changes".
- * After that you will see form to submit a Pull Request.  You should just be able to submit the form, and your changes 
- will be sent to the core team for approval.
+ * After that you will see form to submit a Pull Request.  You should be able to adjust the version your document ion change is for and then submit the form. Your changes 
+ will be sent to the core committers for approval.
 
 <div class="warning" markdown='1'>
 You should make the changes in the lowest branch they apply to. For instance, if you fix a spelling issue that you
@@ -46,9 +46,9 @@ documentation.  This helps prevent our documentation from getting out of date.
 
 ## Repositories
 
-*  End-user: [userhelp.silverstripe.org](http://userhelp.silverstripe.org).
-*  Developer Guides: [doc.silverstripe.org](http://doc.silverstripe.org).
-*  Developer API Docuumentation: [api.silverstripe.org](http://api.silverstripe.org).
+*  End-user: [userhelp.silverstripe.org](http://github.com/silverstripe/userhelp.silverstripe.org).
+*  Developer Guides: [doc.silverstripe.org](http://github.com/silverstripe/doc.silverstripe.org).
+*  Developer API Documentation: [api.silverstripe.org](http://github.com/silverstripe/api.silverstripe.org).
 
 ## Source Control
 
@@ -68,12 +68,12 @@ for documenting open source software.
 * Keep documentation lines to 120 characters.
 * Don't duplicate: Search for existing places to put your documentation. Do you really require a new page, or just a new paragraph
 of text somewhere?
-* Use PHPDoc in source code: Leave lowlevel technical documentation to code comments within PHP, in [PHPDoc](http://en.wikipedia.org/wiki/PHPDoc) format. 
+* Use PHPDoc in source code: Leave low level technical documentation to code comments within PHP, in [PHPDoc](http://en.wikipedia.org/wiki/PHPDoc) format. 
 * API and Developer Guides complement each other: Both forms of documenting source code (API and Developer Guides) are valuable resources.
 * Provide context: Give API documentation the "bigger picture" by referring to Developer Guides inside your PHPDoc.
 * Make your documentation findable: Documentation lives by interlinking content, so please make sure your contribution doesn't become an
 inaccessible island. Your page should at least be linked on the index page in the same folder. It can also appear
-as "related content" on other resource (e.g. `/topics/search` might link to `howto/search-dataobjects`).
+as "related content" on other resource (e.g. `/tutorials/site_search` might link to `/developer_guides/forms/introduction`).
 
 ## Writing Style
 

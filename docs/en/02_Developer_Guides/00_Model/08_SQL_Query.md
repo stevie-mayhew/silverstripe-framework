@@ -3,7 +3,7 @@ summary: Write and modify direct database queries through SQLQuery.
 
 # SQLQuery
 
-A [api:SQLQuery] object represents a SQL query, which can be serialized into a SQL statement. Dealing with low-level 
+A [api:SQLQuery] object represents a SQL query, which can be serialised into a SQL statement. Dealing with low-level 
 SQL such as `mysql_query()` is not encouraged, since the ORM provides powerful abstraction API's.
 
 For example, if you want to run a simple `COUNT` SQL statement, the following three statements are functionally 
@@ -63,7 +63,7 @@ The `$result` is an array lightly wrapped in a database-specific subclass of `[a
 	:::php
 	$sqlQuery->setDelete(true);
 
-### Insert / Update
+### Insert / update
 
 <div class="alert" markdown="1">
 Currently not supported through the `SQLQuery` class, please use raw `DB::query()` calls instead.
@@ -101,11 +101,11 @@ Creates a map based on the first two columns of the query result.
 	//	2 => "Bar - 1936"
 	// );
 
-## Related Documentation
+## Related documentation
 
-* [Introduction to the Data Model and ORM](../data_model_and_orm)
+* [Introduction to the data model and ORM](../model/data_model_and_orm)
 
-## API Documentation
+## API documentation
 
 * [api:DataObject]
 * [api:SQLQuery]

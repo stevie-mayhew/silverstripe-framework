@@ -12,7 +12,7 @@ These versions of Windows will **NOT** work with this guide:
   * Windows Server 2003
   * Windows XP
 
-**IMPORTANT**: Windows Server 2003 users should [follow this guide](http://doc.silverstripe.org/installation-on-windows-server-2003-iis-6) to installing SilverStripe.
+**IMPORTANT**: Windows Server 2003 users should [follow this guide](windows_iis6) to installing SilverStripe.
 
 The goal is to get a good working web server platform so that one or more SilverStripe projects can be easily deployed onto the server using SVN/GIT.
 
@@ -53,20 +53,20 @@ IIS 7.x comes with Windows. However, it needs to be installed. Follow these step
 
 Once the installation is finished, browse to http://localhost in your browser. If an image pops up, then IIS has been installed correctly.
 
-## IIS URL Rewrite Module
+## IIS URL rewrite module
 
   * Go to http://www.iis.net/extensions/URLRewrite
   * Choose x86 or x64, depending on whether you installed a x86 or x64 version of Windows
   * Run the downloaded file to install and enable the URL Rewrite Module
 
-## IIS Administration Pack
+## IIS administration pack
 
 **NOTE**: Windows Server 2008 R2 or Windows 7 (IIS 7.5) users can skip this step, as it's already installed!
 
   * [Download IIS Administration Pack](http://www.iis.net/extensions/AdministrationPack)
   * Run the downloaded file to enable the IIS Administration Pack (make sure it's x86 or x64 depending on your Windows version)
 
-## SQL Server Native Client
+## SQL server native client
 
 This is only required if you're connecting to a SQL Server database.
 
@@ -75,7 +75,7 @@ This is only required if you're connecting to a SQL Server database.
   * Choose x86 or x64 depending on whether you installed a x86 or x64 version of Windows
   * Run the downloaded file to install and enable the SQL Server Native Client
 
-## Install SQL Server 2008 R2
+## Install SQL server 2008 R2
 
 SQL Server doesn't come with Windows. It must be separately installed.
 
@@ -98,7 +98,7 @@ Installing SQL Server should be relatively straightforward. Keep a note of the p
  * Extract zip contents to **C:\php**
  * Open PHP Manager in IIS and register **C:\php\php-cgi.exe** to enable PHP for IIS
 
-### Install SQL Server drivers for PHP
+### Install SQL server drivers for PHP
 
 This is the PHP extension allowing it to connect to SQL Server databases.
 
@@ -184,7 +184,7 @@ Insert the password you created for SQL Server earlier into the **SS_DATABASE_PA
 
 After gettng the code installed, make sure you set the folder permissions properly (see *Folder permissions for PHP* above).
 
-## Install the SilverStripe SQL Server module ("mssql")
+## Install the SilverStripe SQL server module ("mssql")
 
   * Grab the latest stable version from here: http://www.silverstripe.org/microsoft-sql-server-database/
   * Extract contents to **C:\inetpub\wwwroot\ss\mssql**

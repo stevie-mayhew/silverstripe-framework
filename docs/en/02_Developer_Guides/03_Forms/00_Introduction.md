@@ -1,5 +1,5 @@
-title: Introduction to Forms
-summary: An introduction to creating a Form instance and handling submissions.
+title: Introduction to forms
+summary: An introduction to creating a form instance and handling submissions.
 
 # Forms
 
@@ -7,12 +7,12 @@ The HTML `Form` is the most used way to interact with a user. SilverStripe provi
 the [api:Form] class, [api:FormField] instances to capture data and submissions through [api:FormAction].
 
 <div class="notice" markdown="1">
-See the [Forms Tutorial](../../tutorials/forms/) for a step by step process of creating a `Form`
+See the [forms tutorial](/tutorials/forms/) for a step by step process of creating a form.
 </div>
 
-## Creating a Form
+## Creating a form
 
-Creating a [api:Form] has the following signature.
+Creating a [api:form] has the following signature.
 
 	:::php
 	$form = new Form(
@@ -100,7 +100,7 @@ Some common examples are [api:TextField] or [api:DropdownField].
 	TextField::create($name, $title, $value);
 
 <div class="info" markdown='1'>
-A list of the common FormField subclasses is available on the [Common Subclasses](fields/common_subclasses) page.
+A list of the common FormField subclasses is available on the [common subclasses](fields/common_subclasses) page.
 </div>
 
 The fields are added to the [api:FieldList] `fields` property on the `Form` and can be modified at up to the point the 
@@ -147,13 +147,13 @@ Fields can be removed from the form.
 
 <div class="alert" markdown="1">
 Forms can be tabbed (such as the CMS interface). In these cases, there are additional functions such as `addFieldToTab`
-and `removeFieldByTab` to ensure the fields are on the correct interface. See [Tabbed Forms](tabbed_forms) for more 
+and `removeFieldByTab` to ensure the fields are on the correct interface. See [tabbed forms](tabbed_forms) for more 
 information on the CMS interface.
 </div>
 
 ## Modifying FormFields
 
-Each [api:FormField] subclass has a number of methods you can call on it to customize its' behavior or HTML markup. The
+Each [api:FormField] subclass has a number of methods you can call on it to customise its' behaviour or HTML markup. The
 default `FormField` object has several methods for doing common operations. 
 
 <div class="notice">
@@ -168,11 +168,11 @@ Most of the `set` operations will return the object back so methods can be chain
 		->setAttribute('placeholder', 'Enter a value..')
 		->setTitle('');
 
-### Custom Templates
+### Custom templates
 
 The [api:Form] HTML markup and each of the [api:FormField] instances are rendered into templates. You can provide custom
 templates by using the `setTemplate` method on either the `Form` or `FormField`. For more details on providing custom 
-templates see [Form Templates](form_templates)
+templates see [form templates](form_templates)
 
 	:::php
 	$form = new Form(..);
@@ -303,7 +303,7 @@ For more information, see the [Form Validation](validation) documentation.
 
 	$form = new Form($this, 'MyForm', $fields, $actions, $validator);
 
-## API Documentation
+## API documentation
 
 * [api:Form]
 * [api:FormField]

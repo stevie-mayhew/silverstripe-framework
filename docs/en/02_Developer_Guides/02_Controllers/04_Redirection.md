@@ -21,7 +21,7 @@ HTTP header.
 	$this->redirectBack();
 	// go back to the previous page.
 
-## Status Codes
+## Status codes
 
 The `redirect()` method takes an optional HTTP status code, either `301` for permanent redirects, or `302` for 
 temporary redirects (default).
@@ -30,7 +30,7 @@ temporary redirects (default).
 	$this->redirect('/', 302);
 	// go back to the homepage, don't cache that this page has moved
 
-## Redirection in URL Handling
+## Redirection in URL handling
 
 Controllers can specify redirections in the `$url_handlers` property rather than defining a method by using the '~'
 operator.
@@ -40,7 +40,7 @@ operator.
 		'players/john' => '~>coach'
 	);
 
-For more information on `$url_handlers` see the [Routing](routing) documenation.
+For more information on `$url_handlers` see the [Routing](routing) documentation.
 
 ## API Documentation
 

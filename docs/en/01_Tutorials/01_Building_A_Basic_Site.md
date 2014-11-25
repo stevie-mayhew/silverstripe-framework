@@ -1,7 +1,7 @@
 title: Building a basic site
 summary: An overview of the SilverStripe installation and an introduction to creating a web page.
 
-# Tutorial 1 - Building a Basic Site
+# Tutorial 1 - Building a basic site
 
 ## Overview
 
@@ -36,7 +36,7 @@ Let's have a look at the folder structure.
  | --------- | | -----------  | 
  | assets/   | | Contains images and other files uploaded via the SilverStripe CMS. You can also place your own content inside it, and link to it from within the content area of the CMS. | 
  | cms/      | | Contains all the files that form the CMS area of your site. Its structure is similar to the mysite/ directory, so if you find something interesting, it should be easy enough to look inside and see how it was built. | 
- | framework/ | | The framework that builds both your own site and the CMS that powers it. You’ll be utilizing files in this directory often, both directly and indirectly.                                                             | 
+ | framework/ | | The framework that builds both your own site and the CMS that powers it. You’ll be utilising files in this directory often, both directly and indirectly.                                                             | 
  | mysite/   | | Contains all your site's code (mainly PHP).  | 
  | themes/   | | Combines all images, stylesheets, javascript and templates powering your website into a reusable "theme". | 
       
@@ -44,20 +44,20 @@ When designing your site you should only need to modify the *mysite*, *themes* a
 
 ##  Using the CMS
 
-### User Interface Basics
+### User interface basics
 
 ![](/_images/tutorial1_cms-basic.jpg)
 
 The CMS is the area in which you can manage your site content. You can access the cms at http://localhost/your_site_name/admin (or http://yourdomain.com/admin if you are using your own domain name). You
 will be presented with a login screen. Login using the details you provided at installation. After logging in you
-should see the CMS interface with a list of the pages currently on your website (the site tree). Here you can add, delete and reorganize pages. If you need to delete, publish, or unpublish a page, first check "multi-selection" at the top. You will then be able to perform actions on any checked files using the "Actions" dropdown. Clicking on a page will open it in the page editing interface pictured below (we've entered some test content).
+should see the CMS interface with a list of the pages currently on your website (the site tree). Here you can add, delete and reorganise pages. If you need to delete, publish, or unpublish a page, first check "multi-selection" at the top. You will then be able to perform actions on any checked files using the "Actions" dropdown. Clicking on a page will open it in the page editing interface pictured below (we've entered some test content).
 
 ![](/_images/tutorial1_cms-numbered.jpg)
 
 1.  This menu allows you to move between different sections of the CMS. There are four core sections - "Pages", "Files", "Users" and "Settings". If you have modules installed, they may have their own sections here. In this tutorial we will be focusing on the "Pages" section.
 2.  The breadcrumbs on the left will show you a direct path to the page you are currently looking at. You can use this path to navigate up through a page's hierarchy. On the left there are tabs you may use to flick between different aspects of a page. By default, you should be shown three tabs: "Content", "Settings", and "History". 
  * Content - Allows you to set the title, wysiwyg content, URL and Meta data for your page.  
- * Settings - Here you set the type of page behavior, parent page, show in search, show in menu, and who can view or edit the page.  
+ * Settings - Here you set the type of page behaviour, parent page, show in search, show in menu, and who can view or edit the page.  
  * History - This allows you to view previous version of your page, compare, change, and revert to previous version if need be.  
 3.  Within the "Pages" section (provided you are in the "Content" or "Settings" tab) you can quickly move between pages in the CMS using the site tree. To collapse and expand this sidebar, click the arrow at the bottom. If you are in the history tab, you will notice the site tree has been replaced by a list of the alterations to the current page.  
 ![](/_images/tutorial1_cms-numbered-3.jpg)  
@@ -75,7 +75,7 @@ with the editor - try different formatting, tables and images. When you are done
 ### New pages
 To create a new page, click the "Add New" button above the site tree.  
 When you create a new page, you are given the option of setting the structure of the page ("Top level" or "Under another page") and the page type. 
-The page type specifies the templates used to render the page, the fields that are able to be edited in the CMS, and page specific behavior. We will explain page types in more depth as we progress; for now, make all pages of the type "Page".
+The page type specifies the templates used to render the page, the fields that are able to be edited in the CMS, and page specific behaviour. We will explain page types in more depth as we progress; for now, make all pages of the type "Page".
 
 ![](/_images/tutorial1_addpage.jpg)
 
@@ -332,7 +332,7 @@ Earlier we stated that every page in a SilverStripe site has a **page type**, an
 template, or template layout, corresponding to the page type. Therefore, the first step when switching the homepage template is to create a new page type.
 
 Each page type is represented by two PHP classes: a *data object* and a *controller*. Don't worry about the details of page
-types right now, we will go into much more detail in the [next tutorial](/tutorials/extending_a_basic_site).
+types right now, we will go into much more detail in the [next tutorial](extending_a_basic_site).
 
 Create a new file *HomePage.php* in *mysite/code*. Copy the following code into it:
 
@@ -368,7 +368,7 @@ It always tries to use the most specific template in an inheritance chain.
 
 ### Creating a new template
 
-To create a new template layout, create a copy of *Page.ss* (found in *themes/simple/templates/Layout*) and call it *HomePage.ss*. If we flush the cache (*?flush=1*), SilverStripe should now be using *HomePage.ss* for the homepage, and *Page.ss* for the rest of the site. Now let's customize the *HomePage* template. 
+To create a new template layout, create a copy of *Page.ss* (found in *themes/simple/templates/Layout*) and call it *HomePage.ss*. If we flush the cache (*?flush=1*), SilverStripe should now be using *HomePage.ss* for the homepage, and *Page.ss* for the rest of the site. Now let's customise the *HomePage* template. 
 
 First, we don't need the breadcrumbs and the secondary menu for the homepage. Let's remove them:
 	:::ss
@@ -402,8 +402,8 @@ then descend into the *themes/simple/templates/Layout* folder, and will use *Pag
 
 ## Summary
 
-So far we have taken a look at the different areas and functionality within the pages area of the CMS. We have learnt about template variables, controls and if statements and used these to build a basic, but fully functional, website. We have also briefly covered page types, and looked at how they correspond to templates and sub-templates. Using this knowledge, we have customized our website's homepage design.
+So far we have taken a look at the different areas and functionality within the pages area of the CMS. We have learnt about template variables, controls and if statements and used these to build a basic, but fully functional, website. We have also briefly covered page types, and looked at how they correspond to templates and sub-templates. Using this knowledge, we have customised our website's homepage design.
 
-In the next tutorial, [Extending a Basic Site](/tutorials/extending_a_basic_site), we will explore page types on a deeper level, and look at customising our own page types to extend the functionality of SilverStripe.
+In the next tutorial, [Extending a Basic Site](extending_a_basic_site), we will explore page types on a deeper level, and look at customising our own page types to extend the functionality of SilverStripe.
 
-[Next tutorial >>](/tutorials/extending_a_basic_site)
+[Next tutorial >>](extending_a_basic_site)

@@ -4,7 +4,7 @@ summary: Modify the data model without using subclasses.
 # Extending DataObjects
 
 You can add properties and methods to existing [api:DataObjects]s like [api:Member] without hacking core code or sub 
-classing by using [api:DataExtension]. See the [Extending SilverStripe](../extending) guide for more information on
+classing by using [api:DataExtension]. See the [Extending SilverStripe](../extending/extensions) guide for more information on
 [api:DataExtension].
 
 The following documentation outlines some common hooks that the [api:Extension] API provides specifically for managing
@@ -12,7 +12,7 @@ data records.
 
 ## onBeforeWrite
 
-You can customize saving-behavior for each DataObject, e.g. for adding workflow or data customization. The function is 
+You can customise saving-behaviour for each DataObject, e.g. for adding workflow or data customisation. The function is 
 triggered when calling *write()* to save the object to the database. This includes saving a page in the CMS or altering 
 a `ModelAdmin` record.
 
@@ -54,7 +54,7 @@ Example: Disallow creation of new players if the currently logged-in player is n
 
 Triggered before executing *delete()* on an existing object.
 
-Example: Checking for a specific [permission](/reference/permission) to delete this type of object. It checks if a 
+Example: Checking for a specific [permission](permissions) to delete this type of object. It checks if a 
 member is logged in who belongs to a group containing the permission "PLAYER_DELETE".
 
 	:::php

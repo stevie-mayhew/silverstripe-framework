@@ -2,7 +2,7 @@ title: Command Line Interface
 summary: Automate SilverStripe, run Cron Jobs or sync with other platforms through the Command Line Interface.
 introduction: Automate SilverStripe, run Cron Jobs or sync with other platforms through the Command Line Interface.
 
-SilverStripe can call [Controllers](../controllers) through a command line interface (CLI) just as easily as through a 
+SilverStripe can call [Controllers](/developer_guides/controllers) through a command line interface (CLI) just as easily as through a 
 web browser. This functionality can be used to automate tasks with cron jobs, run unit tests, or anything else that 
 needs to interface over the command line.
 
@@ -19,7 +19,7 @@ more). This can be a good thing, your CLI can be configured to use higher memory
 to have.
 </div>
 
-## Sake - SilverStripe Make
+## Sake - SilverStripe make
 
 Sake is a simple wrapper around `cli-script.php`. It also tries to detect which `php` executable to use if more than one 
 are available.
@@ -50,10 +50,10 @@ command line, it has no way of knowing. To work this out, add lines to your
 	:::php
 	global $_FILE_TO_URL_MAPPING;
 
-	$_FILE_TO_URL_MAPPING['/Users/sminnee/Sites'] = 'http://localhost';
+	$_FILE_TO_URL_MAPPING['/var/www'] = 'http://localhost';
 
-The above statement tells SilverStripe that anything executed under the `/Users/sminnee/Sites` directory will have the
-base URL `http://localhost`. The site `/Users/sminnee/Sites/my_silverstripe_project` will translate to the URL
+The above statement tells SilverStripe that anything executed under the `/var/www` directory will have the
+base URL `http://localhost`. The site `/var/www/my_silverstripe_project` will translate to the URL
 `http://localhost/my_silverstripe_project`.
 
 You can add multiple file to url mapping definitions. The most specific mapping will be used.
@@ -61,8 +61,8 @@ You can add multiple file to url mapping definitions. The most specific mapping 
 	:::php
 	global $_FILE_TO_URL_MAPPING;
 
-	$_FILE_TO_URL_MAPPING['/Users/sminnee/Sites'] = 'http://localhost';
-	$_FILE_TO_URL_MAPPING['/Users/sminnee/Sites/my_silverstripe_project'] = 'http://project.localhost';
+	$_FILE_TO_URL_MAPPING['/var/wwww'] = 'http://localhost';
+	$_FILE_TO_URL_MAPPING['/var/www/my_silverstripe_project'] = 'http://project.localhost';
 
 ### Usage
 
@@ -78,7 +78,7 @@ Sake can run any controller by passing the relative URL to that controller.
 Sake is particularly useful for running build tasks.
 	
 	:::bash
-	sake dev/build "flush=1"
+	sake dev/build flush=1
 
 Or running unit tests..
 

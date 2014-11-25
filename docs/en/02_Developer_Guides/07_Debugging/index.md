@@ -3,7 +3,7 @@ summary: Learn how to identify errors in your application and best practice for 
 # Debugging
 
 SilverStripe can be a large and complex framework to debug, but there are ways to make debugging less painful. In this
-guide we show the basics on defining the correct [Environment Type](environment_type) for your application and other
+guide we show the basics on defining the correct [Environment Type](environment_types) for your application and other
 built-in helpers for dealing with application errors.
 
 [CHILDREN]
@@ -13,7 +13,7 @@ built-in helpers for dealing with application errors.
 See the [Profiling](../performance/profiling) documentation for more information on profiling SilverStripe to track down
 bottle-necks and identify slow moving parts of your application chain.
 
-## Debugging Utilities
+## Debugging utilities
 
 The [api:Debug] class contains a number of static utility methods for more advanced debugging.
 

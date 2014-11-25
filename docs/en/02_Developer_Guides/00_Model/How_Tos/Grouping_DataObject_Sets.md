@@ -2,7 +2,7 @@
 
 The [api:SS_List] class is designed to return a flat list of records.
 These lists can get quite long, and hard to present on a single list.
-[Pagination](/howto/pagination) is one way to solve this problem,
+[Pagination](../../templates/how_tos/pagination) is one way to solve this problem,
 by splitting up the list into multiple pages.
 
 In this howto, we present an alternative to pagination: 
@@ -111,7 +111,7 @@ This will have a method which returns the month it was posted in:
 	}
 
 The next step is to create a method that will return all records that exist, 
-sorted by month name from January to December. This can be accomplshed by sorting by the `Created` field:
+sorted by month name from January to December. This can be accomplished by sorting by the `Created` field:
 
 	:::php
 	class Page extends SiteTree {
@@ -144,4 +144,4 @@ The final step is the render this into the template using the [api:GroupedList->
 
 ## Related
 
- * [Howto: "Pagination"](/howto/pagination)
+ * [Howto: "Pagination"](../../templates/how_tos/pagination)

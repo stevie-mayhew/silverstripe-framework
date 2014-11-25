@@ -24,10 +24,10 @@ denoting the different "stages", which map to different database tables.
 
 <div class="notice" markdown="1">
 The extension is automatically applied to `SiteTree` class. For more information on extensions see 
-[Extending](../extending) and the [Configuration](../configuration) documentation.
+[Extending](../extending/extensions) and the [Configuration](../configuration) documentation.
 </div>
 
-## Database Structure
+## Database structure
 
 Depending on how many stages you configured, two or more new tables will be created for your records. In the above, this
 will create a new `MyClass_Live` table once you've rebuilt the database.
@@ -50,7 +50,7 @@ automatically joined as required:
 
 ## Usage
 
-### Reading Versions
+### Reading versions
 
 By default, all records are retrieved from the "Draft" stage (so the `MyRecord` table in our example). You can 
 explicitly request a certain stage through various getters on the `Versioned` class.
@@ -64,7 +64,7 @@ explicitly request a certain stage through various getters on the `Versioned` cl
 	$stageRecord = Versioned::get_by_stage('MyRecord', 'Stage')->byID(99);
 	$liveRecord = Versioned::get_by_stage('MyRecord', 'Live')->byID(99);
 
-### Historical Versions
+### Historical versions
 
 The above commands will just retrieve the latest version of its respective stage for you, but not older versions stored 
 in the `<class>_versions` tables.
@@ -77,7 +77,7 @@ The record is retrieved as a `DataObject`, but saving back modifications via `wr
 rather than modifying the existing one.
 </div>
 
-In order to get a list of all versions for a specific record, we need to generate specialized `[api:Versioned_Version]` 
+In order to get a list of all versions for a specific record, we need to generate specialised `[api:Versioned_Version]` 
 objects, which expose the same database information as a `DataObject`, but also include information about when and how 
 a record was published.
 	
@@ -86,7 +86,7 @@ a record was published.
 	$versions = $record->allVersions();
 	echo $versions->First()->Version; // instance of Versioned_Version
 
-### Writing Versions and Changing Stages
+### Writing versions and changing stages
 
 The usual call to `DataObject->write()` will write to whatever stage is currently active, as defined by the 
 `Versioned::current_stage()` global setting. Each call will automatically create a new version in the 
@@ -112,10 +112,10 @@ Similarly, an "unpublish" operation does the reverse, and removes a record from 
 	// will remove the row from the `MyRecord_Live` table
 	$record->deleteFromStage('Live');
 
-### Forcing the Current Stage
+### Forcing the current stage
 
 The current stage is stored as global state on the object. It is usually modified by controllers, e.g. when a preview 
-is initialized. But it can also be set and reset temporarily to force a specific operation to run on a certain stage.
+is initialised. But it can also be set and reset temporarily to force a specific operation to run on a certain stage.
 
 	:::php
 	$origMode = Versioned::get_reading_mode(); // save current mode
@@ -140,12 +140,12 @@ Example: Get the first 10 live records, filtered by creation date:
 The `Versioned` extension doesn't provide any permissions on its own, but you can have a look at the `SiteTree` class 
 for implementation samples, specifically `canPublish()` and `canDeleteFromStage()`.
 
-### Page Specific Operations
+### Page specific operations
 
 Since the `Versioned` extension is primarily used for page objects, the underlying `SiteTree` class has some additional 
 helpers.
 
-### Templates Variables
+### Templates variables
 
 In templates, you don't need to worry about this distinction. The `$Content` variable contain the published content by 
 default, and only preview draft content if explicitly requested (e.g. by the "preview" feature in the CMS, or by adding ?stage=Stage to the URL). If you want 
@@ -172,6 +172,6 @@ authenticated to view it. As with any other controller logic, please use `DataOb
 permissions, and avoid exposing unpublished content to your users.
 </div>
 
-## API Documentation
+## API documentation
 
 * [api:Versioned]

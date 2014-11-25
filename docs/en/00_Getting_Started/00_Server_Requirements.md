@@ -4,7 +4,7 @@ SilverStripe CMS needs to be installed on a web server. Content authors and webs
 to access a web-based GUI to do their day-to-day work. Website designers and developers require access to the files on
 the server to update templates, website logic, and perform upgrades or maintenance.
 
-Our web-based [PHP installer](/installation) can check if you meet the requirements listed below.
+Our web-based [PHP installer](installation) can check if you meet the requirements listed below.
 
 ## Web server software requirements
 
@@ -21,9 +21,9 @@ Our web-based [PHP installer](/installation) can check if you meet the requireme
  * See [phpinfo()](http://php.net/manual/en/function.phpinfo.php) for more information about your environment
  * One of the following databases: 
   * MySQL 5.0+
-  * PostgreSQL 8.3+ (requires ["postgresql" module](http://silverstripe.org/postgresql-module))
-  * SQL Server 2008+ (requires ["mssql" module](http://silverstripe.org/microsoft-sql-server-database/))
-  * Support for [Oracle](http://www.silverstripe.org/oracle-database-module/) and [SQLite](http://silverstripe.org/sqlite-database/) is not commercially supported, but is under development by our open source community.
+  * PostgreSQL 8.3+ (requires ["postgresql" module](http://addons.silverstripe.org/add-ons/silverstripe/postgresql))
+  * SQL Server 2008+ (requires ["mssql" module](http://addons.silverstripe.org/add-ons/silverstripe/mssql))
+  * Support for [SQLite](http://addons.silverstripe.org/add-ons/silverstripe/sqlite3) is not commercially supported, but is under development by our open source community.
  * One of the following web server products: 
   * Apache 2.0+ with mod_rewrite and "AllowOverride All" set
   * IIS 7+
@@ -45,7 +45,7 @@ comfortably allows over a million page views per month. Caching and other optimi
 ten or even one hundred times. SilverStripe CMS can be used in multiple-server architectures to improve scalability and
 redundancy.
 
-For more information on how to scale SilverStripe see the [Performance](../../developer_guides/performance/) Gluide.
+For more information on how to scale SilverStripe see the [Performance](/developer_guides/performance) guide.
 
 ## Client side (CMS) requirements
 
@@ -57,5 +57,5 @@ systems.
 
 SilverStripe CMS is designed to make excellent, standards-compliant websites that are compatible with a wide range of
 industry standard browsers and operating systems. A competent developer is able to produce websites that meet W3C
-guidelines for HTML, CSS, JavaScript, and accessibility, in addition to meeting specific guildelines, such as
+guidelines for HTML, CSS, JavaScript, and accessibility, in addition to meeting specific guidelines, such as
 e-government requirements.

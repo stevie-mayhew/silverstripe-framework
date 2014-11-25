@@ -17,7 +17,7 @@ GridField can only be used with `$list` data sets that are of the type `SS_List`
 
 <div class="notice" markdown="1">
 [api:GridField] powers the automated data UI of [api:ModelAdmin]. For more information about `ModelAdmin` see the 
-[Customizing the CMS](../../customizing_the_cms) guide.
+[Customising the CMS](../../customising_the_admin_interface) guide.
 </div>
 
 Each `GridField` is built from a number of components grouped into the [api:GridFieldConfig]. Without any components, 
@@ -91,7 +91,7 @@ the `getConfig()` method on `GridField`.
 	}
 
 
-With the `GridFieldConfig` instance, we can modify the behavior of the `GridField`. 
+With the `GridFieldConfig` instance, we can modify the behaviour of the `GridField`. 
 
 	:::php
 	// `GridFieldConfig::create()` will create an empty configuration (no components).
@@ -305,7 +305,7 @@ The namespace notation is `ManyMany[<extradata-field-name>]`, so for example `Ma
 	}
 
 
-## Flexible Area Assignment through Fragments
+## Flexible area assignment through fragments
 
 `GridField` layouts can contain many components other than the table itself, for example a search bar to find existing 
 relations, a button to add those, and buttons to export and print the current data. The `GridField` has certain defined 
@@ -327,7 +327,7 @@ bottom right of the table.
 	$config->addComponent(new GridFieldPrintButton('buttons-after-right'));
 
 
-### Creating your own Fragments
+### Creating your own fragments
 
 Fragments are designated areas within a `GridField` which can be shared between component templates. You can define 
 your own fragments by using a `\$DefineFragment' placeholder in your components' template. This example will simply 
@@ -370,24 +370,24 @@ Your new area can also be used by existing components, e.g. the [api:GridFieldPr
 	:::php
 	new GridFieldPrintButton('my-component-area');
 
-## Creating a Custom GridFieldComponent
+## Creating a custom GridFieldComponent
 
-Customizing a `GridField` is easy, applications and modules can provide their own `GridFieldComponent` instances to add
+Customising a `GridField` is easy, applications and modules can provide their own `GridFieldComponent` instances to add
 functionality. See [How to Create a GridFieldComponent](../how_tos/create_a_gridfield_component).
 
-## Creating a Custom GridField_ActionProvider
+## Creating a custom GridField_ActionProvider
 
 [api:GridField_ActionProvider] provides row level actions such as deleting a record. See 
 [How to Create a GridField_ActionProvider](../how_tos/create_a_gridfield_actionprovider).
 
-## Saving the GridField State
+## Saving the GridField state
 
-`GridState` is a class that is used to contain the current state and actions on the `GridField`. It's transfered 
+`GridState` is a class that is used to contain the current state and actions on the `GridField`. It's transferred 
 between page requests by being inserted as a hidden field in the form.
 
 The `GridState_Component` sets and gets data from the `GridState`.
 
-## API Documentation
+## API documentation
 
  * [api:GridField]
  * [api:GridFieldConfig]

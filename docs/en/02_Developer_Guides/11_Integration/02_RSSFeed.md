@@ -1,7 +1,7 @@
 title: RSS Feed
 summary: Output records from your database as an RSS Feed.
 
-# RSS Feed
+# RSS feed
 
 Generating RSS / Atom-feeds is a matter of rendering a `[api:SS_List]` instance through the `[api:RSSFeed]` class.
 
@@ -141,10 +141,10 @@ Then in our controller, we add a new action which returns a the XML list of `Pla
 		}
 	}
 
-### Customizing the RSS Feed template
+### Customising the RSS Feed template
 
 The default template used for XML view is `framework/templates/RSSFeed.ss`. This template displays titles and links to 
-the object. To customize the XML produced use `setTemplate`.
+the object. To customise the XML produced use `setTemplate`.
 
 Say from that last example we want to include the Players Team in the XML feed we might create the following XML file.
 

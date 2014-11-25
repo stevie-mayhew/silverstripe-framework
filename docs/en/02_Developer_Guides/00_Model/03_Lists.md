@@ -1,7 +1,7 @@
-title: Managing Lists
+title: Managing lists
 summary: The SS_List interface allows you to iterate through and manipulate a list of objects.
 
-# Managing Lists
+# Managing lists
 
 Whenever using the ORM to fetch records or navigate relationships you will receive an [api:SS_List] instance commonly as
 either [api:DataList] or [api:RelationList]. This object gives you the ability to iterate over each of the results or
@@ -85,7 +85,7 @@ This functionality is provided by the [api:SS_Map] class, which can be used to b
 	// returns '2'
 
 
-## API Documentation
+## API documentation
 
 * [api:SS_List]
 * [api:RelationList]

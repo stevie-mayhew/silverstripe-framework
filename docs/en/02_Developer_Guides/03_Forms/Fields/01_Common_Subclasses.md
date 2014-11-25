@@ -1,9 +1,9 @@
-title: Common FormField Types
+title: Common FormField types
 summary: A table containing a list of the common FormField subclasses.
 
-# Form Field Types
+# Form field types
 
-This is a highlevel overview of available `[api:FormField]` subclasses. An automatically generated list is available 
+This is a high level overview of available `[api:FormField]` subclasses. An automatically generated list is available 
 on the SilverStripe API documentation.
 
 ## Basic
@@ -38,7 +38,7 @@ on the SilverStripe API documentation.
  * `[api:OptionsetField]`: Set of radio buttons designed to emulate a dropdown.
  * `[api:PhoneNumberField]`: Field for displaying phone numbers. It separates the number, the area code and optionally the country code and extension.
  * `[api:SelectionGroup]`: SelectionGroup represents a number of fields which are selectable by a radio button that appears at the beginning of each item.
- * `[api:TimeField]`: Input field with time-specific, localized validation.
+ * `[api:TimeField]`: Input field with time-specific, localised validation.
 
 ## Structure
 

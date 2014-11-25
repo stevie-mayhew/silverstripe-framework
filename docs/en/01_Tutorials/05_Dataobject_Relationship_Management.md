@@ -1,7 +1,7 @@
 title: DataObject Relationship Management
 summary: Learn how to create custom DataObjects and how to build interfaces for managing that data.
 
-# Tutorial 5 - Dataobject Relationship Management
+# Tutorial 5 - DataObject relationship management
 
 ## Overview
 
@@ -62,7 +62,7 @@ The relationships are defined through the `$has_one`
 and `$has_many` properties on the objects.
 The array keys declares the name of the relationship,
 the array values contain the class name (see the ["database structure"](/developer_guides/model/database_structure)
-and ["datamodel"](/developer_guides/model/data_model_and_orm) topics for more information).
+and ["datamodel and ORM"](/developer_guides/model/data_model_and_orm) topics for more information).
 
 As you can see, only the `Project` model extends `Page`,
 while `Student` is a plain `DataObject` subclass.
@@ -78,10 +78,10 @@ we need to tell the database to create the related tables.
 Trigger a rebuild through *dev/build* before you 
 proceed to the next part of this tutorial.
 
-### Organizing pages: ProjectHolder
+### Organising pages: ProjectHolder
 
 A `Project` is just a page, so we could create it anywhere in the CMS.
-In order to list and organize them, it makes sense to collect them under a common parent page.
+In order to list and organise them, it makes sense to collect them under a common parent page.
 We'll create a new page type called `ProjectsHolder` for this purpose,
 which is a common pattern in SilverStripe's page types. Holders
 are useful for listing their children, and usually restrict these children to a specific class,
@@ -101,7 +101,7 @@ The restriction is enforced through the `$allowed_children` directive.
 	}
 
 You might have noticed that we don't specify the relationship
-to a project. That's because it's already inherited from the parent implementation,
+to a project. That's because its already inherited from the parent implementation,
 as part of the normal page hierarchy in the CMS.
 
 Now that we have created our `ProjectsHolder` and `Project` page types,  we'll add some content.
@@ -116,9 +116,9 @@ and collect those within a `ProjectsHolder`.
 But what about creating `Student` records?
 
 Since students are related to a single project, we will
-allow editing them right on the CMS interface in the `Project` page type.
-We do this through a powerful field called `[GridField](/reference/grid-field)`.
-All customization to fields for a page type are managed through a method called
+allow editing them right the on the CMS interface in the `Project` page type.
+We do this through a powerful field called `[GridField](/developer_guides/forms/fields/gridfield)`.
+All customisation to fields for a page type are managed through a method called
 `getCMSFields()`, so let's add it there:
 
 **mysite/code/Project.php**
@@ -151,10 +151,10 @@ All customization to fields for a page type are managed through a method called
 	}
 
 This creates a tabular field, which lists related student records, one row at a time.
-It's empty by default, but you can add new students as required,
+Its empty by default, but you can add new students as required,
 or relate them to the project by typing in the box above the table.
 
-In our case, we want to manage those records, edit their details, and add new ones. 
+In our case, want to manage those records, edit their details, and add new ones. 
 To accomplish this, we have added a specific `[api:GridFieldConfig]`.
 While we could've built the config from scratch, there's several
 preconfigured instances. The `GridFieldConfig_RecordEditor` default configures
@@ -167,7 +167,7 @@ We call `setDisplayFields()` directly on the component responsible for their ren
 	Adding a `GridField` to a page type is a popular way to manage data,
 	but not the only one. If your data requires a dedicated interface
 	with more sophisticated search and management logic, consider
-	using the `[ModelAdmin](reference/modeladmin)` interface instead.
+	using the `[ModelAdmin](/developer_guides/customising_the_admin_interface/modeladmin)` interface instead.
 </div>
 
 ![tutorial:tutorial5_project_creation.jpg](/_images/tutorial5_project_creation.jpg)
@@ -187,7 +187,7 @@ Once you have added all the students, and selected their projects, it should loo
 Now we have a fairly good picture of how students relate to their projects.
 But students generally have somebody looking them over the shoulder.
 In our case, that's the "mentor". Each project can have many of them,
-and each mentor can have one or more projects. They're busy guys!
+and each mentor can be have one or more projects. They're busy guys!
 This is called a *many-many* relationship.
 
 The first step is to create the `Mentor` object and set the relation with the `Project` page type.
@@ -247,12 +247,12 @@ of `$this->Mentor()` (rather than `Mentor::get()`). It will limit
 the list of records to those related through the many-many relationship.
 
 In the CMS, open one of your `Project` pages and select the "Mentors" tab. 
-Add all the mentors listed [above](#what-are-we-working-towards) 
+Add all the mentors listed [above](dataobject_relationship_management#what-are-we-working-towards) 
 by clicking on the **Add Mentor** button. 
 
 ![tutorial:tutorial5_module_creation.jpg](/_images/tutorial5_module_creation.jpg)
 
-To associate the mentor with a project, select one of the mentors, and click on the projects tab. Add all the projects a mentor is associated with (see the [list](/tutorials/dataobject_relationship_management#What_are_we_working_towards?)), by typing the name in "Find Projects by Page name" and clicking the "Link Existing" button.
+To associate the mentor with a project, select one of the mentors, and click on the projects tab. Add all the projects a mentor is associated with (see the [list](dataobject_relationship_management#What_are_we_working_towards?)), by typing the name in "Find Projects by Page name" and clicking the "Link Existing" button.
 You will notice that you are able to select the same `Project` for multiple mentors. 
 This is the definition of a **many-to-many** relation.
 
@@ -273,7 +273,7 @@ which lists all projects, and condenses their
 student and mentor relationships into a single line.
 You'll notice that there's no difference between
 accessing a "has-many" and "many-many" relationship
-in the template loops: to the template, it's just
+in the template loops: To the template, its just
 a named list of object.
 
 ![tutorial:tutorial5_projects_table.jpg](/_images/tutorial5_projects_table.jpg)
@@ -324,7 +324,7 @@ or the "Preview" feature in the CMS. You should see a list of all projects now.
 Add `?flush=1` to the page URL to force a refresh of the template cache.
 
 To get a list of all projects, we've looped through the "Children" list,
-which is a relationship we didn't define explictly.
+which is a relationship we didn't define explicitly.
 It is provided to us by the parent implementation,
 since projects are nothing other than children pages in the standard page hierarchy.
 
@@ -410,13 +410,13 @@ the two classes is intentionally fluent in the CMS, you can
 manage them depending on your needs.
 `DataObject` gives you a no-frills solution to data storage,
 but `Page` allows for built-in WYSIWYG editing, versioning,
-publication and hierarchical organization.
+publication and hierarchical organisation.
 
 ## Exercises
 
 This is a simplified example, so there's naturally room for improvement.
 In order to challenge your knowledge gained in the tutorials so far,
-we suggest some excercises to make the solution more flexible:
+we suggest some exercises to make the solution more flexible:
 
  * Refactor the `Student` and `Mentor` classes to inherit from a common parent class `Person`,
    and avoid any duplication between the two subclasses.

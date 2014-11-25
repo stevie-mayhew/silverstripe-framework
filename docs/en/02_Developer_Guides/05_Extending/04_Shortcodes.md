@@ -214,11 +214,11 @@ example the below code will not work as expected:
 
 The parser will raise an error if it can not find a matching opening tag for any particular closing tag
 
-## Related Documentation
+## Related documentation
 
  * [Wordpress Implementation](http://codex.wordpress.org/Shortcode_API)
  * [How to Create a Google Maps Shortcode](how_tos/create_a_google_maps_shortcode)
 
-## API Documentation
+## API documentation
 
  * [api:ShortcodeParser]

@@ -1,6 +1,6 @@
 # Caching
 
-## Built-In Caches
+## Built-in caches
 
 The framework uses caches to store infrequently changing values.
 By default, the storage mechanism is simply the filesystem, although
@@ -17,7 +17,7 @@ Flushing the various manifests is performed through a GET
 parameter (`flush=1`). Since this action requires more server resources than normal requests,
 executing the action is limited to the following cases when performed via a web request:
 
- * The [environment](/topics/environment-management) is in "dev mode"
+ * The [environment](/getting_started/environment_management) is in "dev mode"
  * A user is logged in with ADMIN permissions
  * An error occurs during startup
 
@@ -27,7 +27,7 @@ The `[api:SS_Cache]` class provides a bunch of static functions wrapping the Zen
 in something a little more easy to use with the SilverStripe config system.
 
 A `Zend_Cache` has both a frontend (determines how to get the value to cache, 
-and how to serialize it for storage) and a backend (handles the actual 
+and how to serialise it for storage) and a backend (handles the actual 
 storage).
 
 Rather than require library code to specify the backend directly, cache 
@@ -50,7 +50,7 @@ The returned object is of type `Zend_Cache`.
 	// & storage info
 	$cache = SS_Cache::factory('foo'); 
 	if (!($result = $cache->load($cachekey))) {
-		$result = caluate some how;
+		$result = calcuate some how;
 		$cache->save($result);
 	}
 	return $result;
@@ -90,7 +90,7 @@ e.g. by including the `LastEdited` value when caching `DataObject` results.
 	// set all caches to 3 hours
 	SS_Cache::set_cache_lifetime('any', 60*60*3);
 
-## Alternative Cache Backends
+## Alternative cache backends
 
 By default, SilverStripe uses a file-based caching backend.
 Together with a file stat cache like [APC](http://us2.php.net/manual/en/book.apc.php) 
@@ -103,7 +103,7 @@ which can provide better performance, including APC, Xcache, ZendServer, Memcach
 If `?flush=1` is requested in the URL, e.g. http://mysite.com?flush=1, this will trigger a call to `flush()` on
 any classes that implement the `Flushable` interface. Using this, you can trigger your caches to clean.
 
-See [reference documentation on Flushable](/reference/flushable) for implementation details.
+See [documentation on Flushable](/developer_guides/execution_pipeline/flushable) for implementation details.
 
 ### Memcached
 
@@ -138,7 +138,7 @@ This backends stores cache records in shared memory through the [APC](http://pec
 	SS_Cache::add_backend('primary_apc', 'APC');
 	SS_Cache::pick_backend('primary_apc', 'any', 10);
 
-### Two-Levels
+### Two-levels
 
 This backend is an hybrid one. It stores cache records in two other backends: 
 a fast one (but limited) like Apc, Memcache... and a "slow" one like File or Sqlite.

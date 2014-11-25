@@ -31,7 +31,7 @@ The following example will add a simple DateField to your Page, allowing you to 
 		} 
 	}	
 
-## Custom Date Format
+## Custom date format
 
 A custom date format for a [api:DateField] can be provided through `setConfig`.
 
@@ -44,7 +44,7 @@ The formats are based on [Zend_Date constants](http://framework.zend.com/manual/
 </div>
  
 
-## Min and Max Dates
+## Min and max dates
 
 Sets the minimum and maximum allowed date values using the `min` and `max` configuration settings (in ISO format or 
 strtotime()).
@@ -54,7 +54,7 @@ strtotime()).
 		->setConfig('min', '-7 days')
 		->setConfig('max', '2012-12-31')
 		
-## Separate Day / Month / Year Fields
+## Separate "day / month / year" fields
 
 The following setting will display your DateField as three input fields for day, month and year separately. HTML5 
 placeholders 'day', 'month' and 'year' are enabled by default. 
@@ -69,7 +69,7 @@ placeholders 'day', 'month' and 'year' are enabled by default.
 Any custom date format settings will be ignored. 
 </div>
 
-## Calendar Picker
+## Calendar picker
  
 The following setting will add a Calendar to a single DateField, using the jQuery UI DatePicker widget.
 
@@ -103,7 +103,7 @@ At this moment not all locale files may be present. If a locale file is missing,
 to 'yyyy-MM-dd' whenever day - and/or monthnames are used. After saving, the correct format will be displayed.  
 </div>
 
-## Formatting Hints
+## Formatting hints
 
 It's often not immediate apparent which format a field accepts, and showing the technical format (e.g. `HH:mm:ss`) is 
 of limited use to the average user. An alternative is to show the current date in the desired format alongside the 
@@ -125,6 +125,6 @@ field description as an example.
 Fields scaffolded through [api:DataObject::scaffoldCMSFields] automatically have a description attached to them.
 </div>
 
-## API Documentation
+## API documentation
 
 * [api:DateField]

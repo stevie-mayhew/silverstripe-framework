@@ -57,7 +57,7 @@ to the underlying `DataObject` just as if they were added to the original `Membe
 that file directly.
 
 
-### Adding Database Fields
+### Adding database fields
 
 Extra database fields can be added with a extension in the same manner as if they were placed on the `DataObject` class 
 they're applied to. These will be added to the table of the base object - the extension will actually edit the $db, 
@@ -91,7 +91,7 @@ $has_one etc.
 	$CurrentMember.Image
 
 
-## Adding Methods
+## Adding methods
 
 Methods that have a unique name will be called as part of the `__call` method on [api:Object]. In the previous example
 we added a `SayHi` method which is unique to our extension.
@@ -110,10 +110,10 @@ we added a `SayHi` method which is unique to our extension.
 	// "Hi Sam"
 
 
-## Modifying Existing Methods
+## Modifying existing methods
 
 If the `Extension` needs to modify an existing method it's a little tricker. It requires that the method you want to
-customize has provided an *Extension Hook* in the place where you want to modify the data. An *Extension Hook* is done 
+customise has provided an *Extension Hook* in the place where you want to modify the data. An *Extension Hook* is done 
 through the `[api:Object->extend]` method.
 
 **framework/security/Member.php**
@@ -207,7 +207,7 @@ In your [api:Extension] class you can only refer to the source object through th
 		}
 	}
 
-## Checking to see if an Object has an Extension
+## Checking to see if an object has an extension
 
 To see what extensions are currently enabled on an object, use [api:Object->getExtensionInstances] and 
 [api:Object->hasExtension]
@@ -236,7 +236,7 @@ Please note that each callback is only ever called once, and then cleared, so mu
 require that a callback is registered each time, if necessary.
 </div>
 
-Example: A class that wants to control default values during object  initialization. The code needs to assign a value 
+Example: A class that wants to control default values during object  initialisation. The code needs to assign a value 
 if not specified in `self::$defaults`, but before extensions have been called:
 
 	:::php
@@ -252,7 +252,7 @@ if not specified in `self::$defaults`, but before extensions have been called:
 		parent::__construct();
 	}
 
-Example 2: User code can intervene in the process of extending cms fields.
+Example 2: User code can intervene in the process of extending CMS fields.
 
 <div class="notice" markdown="1">
 This method is preferred to disabling, enabling, and calling field extensions manually.
@@ -272,12 +272,12 @@ This method is preferred to disabling, enabling, and calling field extensions ma
 	}
 
 
-## Related Documentaion
+## Related documentaion
 
-* [Injector](injector/)
+* [Injector](injector)
 * [api:Object::useCustomClass]
 
-## API Documentation
+## API documentation
 
 * [api:Extension]
 * [api:DataExtension]

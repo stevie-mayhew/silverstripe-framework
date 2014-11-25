@@ -1,7 +1,7 @@
-title: HTTP Cache Headers
+title: HTTP cache headers
 summary: Set the correct HTTP cache headers for your responses.
 
-# Caching Headers
+# Caching headers
 
 By default, PHP adds caching headers that make the page appear purely dynamic. This isn't usually appropriate for most 
 sites, even ones that are updated reasonably frequently. SilverStripe overrides the default settings with the following 
@@ -14,7 +14,7 @@ headers:
   * Since a visitor cookie is set, the site won't be cached by proxies.
   * Ajax requests are never cached.
 
-## Customizing Cache Headers
+## Customising cache headers
 
 ### HTTP::set_cache_age
 	

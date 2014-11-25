@@ -59,11 +59,11 @@ every page on the site, if that's easier.
 
 Please make sure all code inside `*.php` files is wrapped in classes. Due to the way `[api:ManifestBuilder]`
 includes all files with this extension, any **procedural code will be executed on every call**. The most common error here
-is putting a test.php/phpinfo.php file in the document root. See [datamodel](/topics/datamodel) and [controllers](/topics/controller)
+is putting a test.php/phpinfo.php file in the document root. See [datamodel and ORM](/developer_guides/model/data_model_and_orm) and [controllers](/developer_guides/controllers/introduction)
 for ways how to structure your code.
 
 Also, please check that you have PHP enabled on the webserver, and you're running PHP 5.1 or later.
-The web-based [SilverStripe installer](/installation) can help you with this.
+The web-based [SilverStripe installer](/getting_started/installation) can help you with this.
 
 ## I've got file permission problems during installation
 
@@ -80,7 +80,7 @@ needs to create/have write-access to:
 SilverStripe only uses class declarations in PHP files, and doesn't output any content
 directly outside of these declarations. It's easy to accidentally add whitespace
 or any other characters before the `<?php` opening bracket at the start of the document,
-or after the `?>` closing braket at the end of the document.
+or after the `?>` closing bracket at the end of the document.
 
 Since we're dealing with hundreds of included files, identifying these mistakes manually can be tiresome.
 The best way to detect whitespace is to look through your version control system for any uncommitted changes. 

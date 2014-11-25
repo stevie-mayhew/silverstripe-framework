@@ -1,6 +1,6 @@
-title: How to Create a Navigation Menu
+title: How to create a navigation menu
 
-# How to Create a Navigation Menu
+# How to create a navigation menu
 
 In this how-to, we'll create a simple menu which you can use as the primary navigation for your website. This outputs a
 top level menu with a nested second level using the `Menu` loop and a `Children` loop.
@@ -30,5 +30,5 @@ top level menu with a nested second level using the `Menu` loop and a `Children`
 
 ## Related
 
-* [Template Syntax](../syntax)
-* [Common Variables](../command_variables)
+* [Template syntax](../syntax)
+* [Common variables](../common_variables)

@@ -25,6 +25,6 @@ string wherever `{name}` appears in that string. In this case, it is assigning a
 
 * [i18n](../i18n)
 
-## API Documentation
+## API documentation
 
 * [api:i18n]

@@ -8,7 +8,7 @@ application can provide multiple unique themes (i.e a mobile theme).
 
 ## Downloading
 
-Head to the [ Themes ](http://www.silverstripe.org/themes) area of the website to check out the range of themes the 
+Head to the [ Themes ](http://addons.silverstripe.org/add-ons?type=theme&view=expanded) area of the website to check out the range of themes the 
 community has built. Each theme has a page with links you can use to preview and download it. The theme is provided
 as a .tar.gz file.
 
@@ -45,13 +45,13 @@ the Site Configuration panel (http://yoursite.com/admin/settings)
 A `theme` within SilverStripe is simply a collection of templates and other front end assets such as javascript and css.
 located within the `themes` directory. 
 
-![themes:basicfiles.gif](//_images/basicfiles.gif)
+![themes:basicfiles.gif](/_images/basicfiles.gif)
 
 ## Submitting your theme to SilverStripe
 
 If you want to submit your theme to the SilverStripe directory then check
 
-* You should ensure your templates are well structured, modular and commented so it's easy for other people to customize 
+* You should ensure your templates are well structured, modular and commented so it's easy for other people to customise 
 *  Templates should not contain text inside images and all images provided must be open source and not break any 
 copyright or license laws. This includes any icons your template uses.
 *  A theme does not include any PHP files. Only CSS, HTML, Images and javascript.
@@ -62,6 +62,6 @@ click it -> Add to Archive (again) -> Then use the archive format GZIP.
 
 ## Links
 
- * [Themes Listing on silverstripe.org](http://silverstripe.org/themes)
- * [Themes Forum on silverstripe.org](http://www.silverstripe.org/themes-2/)
+ * [Themes Listing addons.silverstripe.org](http://addons.silverstripe.org/add-ons?type=theme&view=expanded)
+ * [Themes Forum on silverstripe.org](http://www.silverstripe.org/community/forums/themes-2/)
  * [Themes repository on github.com](http://github.com/silverstripe-themes)

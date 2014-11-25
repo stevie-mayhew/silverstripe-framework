@@ -32,7 +32,7 @@ to `*text*`).
 
 <div class="info" markdown="1">
 The default HTML template for emails is named `GenericEmail` and is located in `framework/templates/email/`. To 
-customize this template, copy it to the `mysite/templates/Email/` folder or use `setTemplate` when you create the 
+customise this template, copy it to the `mysite/templates/Email/` folder or use `setTemplate` when you create the 
 `Email` instance.
 </div>
 
@@ -108,7 +108,7 @@ Then within your application, usage of the email is much clearer to follow.
 	$email->send();
 
 
-## Administrator Emails
+## Administrator emails
 
 You can set the default sender address of emails through the `Email.admin_email` [configuration setting](/developer_guides/configuration).
 
@@ -124,7 +124,7 @@ Remember, setting a `from` address that doesn't come from your domain (such as t
 email marked as spam. If you want to send from another address think about using the `replyTo` method.
 </div>
 
-## Redirecting Emails
+## Redirecting emails
 
 There are several other [configuration settings](/developer_guides/configuration) to manipulate the email server.
 
@@ -150,7 +150,7 @@ Configuration of those properties looks like the following:
 	$email = new Email(..);
 	$email->replyTo('me@address.com');
 
-### Setting Custom Headers
+### Setting custom headers
 
 For email headers which do not have getters or setters (like setTo(), setFrom()) you can use **addCustomHeader($header,
 $value)**
@@ -168,7 +168,7 @@ See this [Wikipedia](http://en.wikipedia.org/wiki/E-mail#Message_header) entry f
 
 The [newsletter module](http://silverstripe.org/newsletter-module) provides a UI and logic to send batch emails.
 
-## Custom Mailers
+## Custom mailers
 
 SilverStripe supports changing out the underlying web server SMTP mailer service through the `Email::set_mailer()` 
 function. A `Mailer` subclass will commonly override the `sendPlain` and `sendHTML` methods to send emails through curl
@@ -212,6 +212,6 @@ assets folder instead.
 		Email::set_mailer(new LocalMailer());
 	}
 
-## API Documentation
+## API documentation
 
 * [api:Email]

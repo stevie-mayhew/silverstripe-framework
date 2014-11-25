@@ -67,6 +67,6 @@ You may also need to reload the screen with a `flush=1` i.e http://yoursite.com/
 You can define as many extensions for `SiteConfig` as you need. For example, if you're developing a module and what to
 provide the users a place to configure settings then the `SiteConfig` panel is the place to go it.
 
-## API Documentation
+## API documentation
 
 * `[api:SiteConfig]`

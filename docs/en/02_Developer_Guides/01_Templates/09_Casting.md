@@ -1,7 +1,7 @@
-title: Formating, Modifying and Casting Variables
+title: Formatting, modifying and casting variables
 summary: Information on casting, security, modifying data before it's displayed to the user and how to format data within the template.
 
-# Formatting and Casting
+# Formatting and casting
 
 All objects that are being rendered in a template should be a [api:ViewableData] instance such as `DataObject`, 
 `DBField` or `Controller`. From these objects, the template can include any method from the object in 

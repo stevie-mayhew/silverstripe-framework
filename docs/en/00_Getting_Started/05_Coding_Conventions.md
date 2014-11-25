@@ -1,4 +1,4 @@
-# Coding Conventions
+# Coding conventions
 
 This document provides guidelines for code formatting and documentation
 to developers contributing to SilverStripe. It applies to all PHP files
@@ -9,13 +9,13 @@ and facilitate collaboration by making code more consistent and readable.
 
 If you are unsure about a specific standard, imitate existing SilverStripe code.
 
-## File Formatting
+## File formatting
 
 ### Indentation
 
 Always use hard tabs rather then spaces for indentation, with one tab per nesting level.
 
-### Maximum Line Length
+### Maximum line length
 
 The target line length is 100 columns with tabs being treated as four columns,
 meaning developers should strive keep each line of their code 
@@ -23,14 +23,14 @@ under 80 columns where possible and practical.
 However, longer lines are acceptable in some circumstances. 
 The maximum length of any line of PHP code is 120 columns.
 
-### Line Termination
+### Line termination
 
 Line termination follows the Unix text file convention. Lines must end with a single linefeed (LF) character. 
 Linefeed characters are represented as ordinal 10, or hexadecimal 0x0A.
 Note: Do not use carriage returns (CR) as is the convention in Apple OS's (0x0D) or the carriage return - 
 linefeed combination (CRLF) as is standard for the Windows OS (0x0D, 0x0A).
 
-## Naming Conventions
+## Naming conventions
 
 Class, function, variable and constant names may only contain alphanumeric characters and underscores.
 
@@ -42,7 +42,7 @@ Class and filenames are in `UpperCamelCase` format:
 	class MyClass {}
 
 If a class name is comprised of more than one word, the first letter of each 
-new word must be capitalized. Successive capitalized letters are used in 
+new word must be capitalised. Successive capitalised letters are used in 
 acronyms, e.g. a class `XMLImporter` is used while `XmlImporter` is not.
 
 ### Methods
@@ -87,7 +87,7 @@ Member variables always declare their visibility by using one of the private, pr
 
 ### Constants
 
-All letters used in a constant name must be capitalized, 
+All letters used in a constant name must be capitalised, 
 while all words in a constant name must be separated by underscore characters.
 
 	:::php
@@ -98,7 +98,7 @@ while all words in a constant name must be separated by underscore characters.
 Constants must be defined as class members with the `const` modifier. 
 Defining constants in the global scope with the `define` function is permitted but strongly discouraged.
 
-### File Naming and Directory Structure
+### File naming and directory structure
 
 Classes need to be in a file of the same name. Multiple classes are allowed to be contained in one file,
 as long as the prefix of the class equals the filename, and is separated by an underscore from the remaining name.
@@ -119,9 +119,9 @@ To help with namespacing common class names (like Database) it is recommended to
 
 See [directory-structure](/topics/directory-structure) for more information.
 
-## Coding Style
+## Coding style
 
-### PHP Code Declaration
+### PHP code declaration
 
 PHP code must always be delimited by the full-form, standard PHP tags:
 
@@ -137,14 +137,14 @@ white space is expected.
 
 ### Strings
 
-#### String Literals
+#### String literals
 
 When a string is literal (contains no variable substitutions), the apostrophe or "single quote" should always be used to demarcate the string:
 
 	:::php
 	$a = 'Example String';
 
-#### String Literals Containing Apostrophes
+#### String literals containing apostrophes
 
 When a literal string itself contains apostrophes, it is permitted to demarcate the string with quotation marks or "double quotes". 
 
@@ -153,7 +153,7 @@ When a literal string itself contains apostrophes, it is permitted to demarcate 
 
 This syntax is preferred over escaping apostrophes as it is much easier to read.
 
-#### String Substitution
+#### String substitution
 
 Variable substitution is permitted using either of these forms:
 
@@ -166,7 +166,7 @@ For consistency, placing the dollar sign outside of the brackets is not permitte
 	:::php
 	$greeting = "Hello ${name}, welcome back!";
 
-#### String Concatentation
+#### String concatenation
 
 Strings must be concatenated using the "." operator. A space must always be added before and after the "." operator to improve readability:
 
@@ -183,7 +183,7 @@ In these cases, each successive line should be padded with white space such that
 
 ### Arrays
 
-#### Numerically Indexed Arrays
+#### Numerically indexed arrays
 
 Negative numbers are not permitted as indices.
 
@@ -214,9 +214,9 @@ the closing paren should be on a line by itself at the same indentation level as
 	);
 
 When using this latter declaration, we encourage using a trailing comma for the last item in the array; 
-this minimizes the impact of adding new items on successive lines, and helps to ensure no parse errors occur due to a missing comma.
+this minimises the impact of adding new items on successive lines, and helps to ensure no parse errors occur due to a missing comma.
 
-#### Associative Arrays
+#### Associative arrays
 
 When declaring associative arrays with the `array` construct, breaking the statement into multiple lines is encouraged. 
 In this case, each successive line must be padded with white space such that both the keys and the values are aligned:
@@ -237,10 +237,10 @@ For readability, the various "=>" assignment operators should be padded such tha
 		'secondKey' => 'secondValue',
 	);
 
-### Function and Method Declaration
+### Function and method declaration
 
 No method or function invocation is allowed to have spaces directly
-before or after the opening parathesis, as well as no space before the closing parenthesis.
+before or after the opening parenthesis, as well as no space before the closing parenthesis.
 
 	:::php
 	public function foo($arg1, $arg2) {} // good
@@ -277,7 +277,7 @@ or method with one space separating the two, and at the same indentation level a
 Function and method arguments should be separated by a single trailing space after the comma delimiter,
 apart from the last argument.
 
-### Control Structures
+### Control structures
 
 #### if/else/elseif
 
@@ -351,7 +351,7 @@ The construct `default` should never be omitted from a switch statement.
 
 Loop constructs follow the same principles as "Control Structures: if/else/elseif".
 
-### Separation of Logic and Presentation
+### Separation of logic and presentation
 
 Try to avoid using PHP's ability to mix HTML into the code.
 
@@ -416,7 +416,7 @@ Example:
 		
 	}
 	
-### Class Member Ordering
+### Class member ordering
 
 Put code into the classes in the following order (where applicable).
 
@@ -430,7 +430,7 @@ Put code into the classes in the following order (where applicable).
  *  Template data-access methods (methods that will be called by a `$MethodName` or `<% loop $MethodName %>` construct in a template somewhere)
  *  Object methods
 
-### SQL Format
+### SQL format
 
 If you have to use raw SQL, make sure your code works across databases make sure you escape your queries like below, 
 with the column or table name escaped with double quotes and values with single quotes.
@@ -440,9 +440,9 @@ with the column or table name escaped with double quotes and values with single 
 
 Use [ANSI SQL](http://en.wikipedia.org/wiki/SQL#Standardization) format where possible.
 
-### Secure Development 
+### Secure development 
 
-See [security](/topics/security) for conventions related to handing security permissions.
+See the [secure coding](/developer_guides/security/secure_coding) section for conventions related to handing security in SilverStripe coding practice.
 
 ## License
 
@@ -451,5 +451,5 @@ which are licensed under BSD (see [license](http://framework.zend.com/license)).
 
 ## Related
 
- * [Topics: CSS](/topics/css)
- * [Reference: CMS Architecture](/reference/cms-archirecture)
+ * [Template syntax](/developer_guides/templates/syntax)
+ * [CMS architecture](/developer_guides/customising_the_admin_interface/cms_architecture)

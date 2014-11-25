@@ -1,7 +1,7 @@
-title: Data Types, Overloading and Casting
+title: Data types, overloading and casting
 summary: Learn how how data is stored going in and coming out of the ORM and how to modify it.
 
-# Data Types and Casting
+# Data types and casting
 
 Each model in a SilverStripe [api:DataObject] will handle data at some point. This includes database columns such as 
 the ones defined in a `$db` array or simply a method that returns data for the template. 
@@ -28,24 +28,24 @@ In the `Player` example, we have four database columns each with a different dat
 
 ## Available Types
 
-*  [api:Boolean]: A boolean field.
-*  [api:Currency]: A number with 2 decimal points of precision, designed to store currency values.
+*  [api:Boolean]: A boolean field
+*  [api:Currency]: A number with 2 decimal points of precision, designed to store currency values
 *  [api:Date]: A date field
-*  [api:Decimal]: A decimal number.
+*  [api:Decimal]: A decimal number
 *  [api:Enum]: An enumeration of a set of strings
 *  [api:HTMLText]: A variable-length string of up to 2MB, designed to store HTML
 *  [api:HTMLVarchar]: A variable-length string of up to 255 characters, designed to store HTML
-*  [api:Int]: An integer field.
-*  [api:Percentage]: A decimal number between 0 and 1 that represents a percentage.
+*  [api:Int]: An integer field
+*  [api:Percentage]: A decimal number between 0 and 1 that represents a percentage
 *  [api:SS_Datetime]: A date / time field
 *  [api:Text]: A variable-length string of up to 2MB, designed to store raw text
 *  [api:Time]: A time field
-*  [api:Varchar]: A variable-length string of up to 255 characters, designed to store raw text.
+*  [api:Varchar]: A variable-length string of up to 255 characters, designed to store raw text
 
 You can define your own [api:DBField] instances if required as well. See the API documentation for a list of all the
 available subclasses.
 
-## Formatting Output
+## Formatting output
 
 The Data Type does more than setup the correct database schema. They can also define methods and formatting helpers for
 output. You can manually create instances of a Data Type and pass it through to the template. 
@@ -141,7 +141,7 @@ context. Through a `$casting` array, arbitrary properties and getters can be cas
 	$obj->obj('MyDate')->InPast(); // returns boolean
 
 
-## Casting HTML Text
+## Casting HTML text
 
 The database field types [api:HTMLVarchar]/[api:HTMLText] and [api:Varchar]/[api:Text] are exactly the same in 
 the database.  However, the template engine knows to escape fields without the `HTML` prefix automatically in templates,
@@ -176,7 +176,7 @@ database column using `dbObject`.
 	  }
 
 
-## API Documentation
+## API documentation
 
 * [api:DataObject]
 * [api:DBField]

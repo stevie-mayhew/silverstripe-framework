@@ -11,7 +11,7 @@ The Configuration API can be seen as separate from other forms of variables in t
 properties API:
 
   - Configuration is **per class**, not per instance.
-  - Configuration is normally set once during initialization and then not changed.
+  - Configuration is normally set once during initialisation and then not changed.
   - Configuration is normally set by a knowledgeable technical user, such as a developer, not the end user.
 
 <div class="notice" markdown="1">
@@ -44,7 +44,7 @@ be marked `private static` and follow the `lower_case_with_underscores` structur
 		// ..
 	}
 
-## Accessing and Setting Configuration Properties
+## Accessing and setting configuration properties
 
 This can be done by calling the static method `[api:Config::inst]`, like so:
 
@@ -143,10 +143,10 @@ order, where the item that is latest is highest priority)
 
 <div class="notice">
 It is an error to have mixed types of the same named property in different locations. An error will not necessarily
-be raised due to optimizations in the lookup code.
+be raised due to optimisations in the lookup code.
 </div>
 
-## Configuration Masks
+## Configuration masks
 
 At some of these levels you can also set masks. These remove values from the composite value at their priority point 
 rather than add.
@@ -163,7 +163,7 @@ pair in the mask is removed
 - If the composite value is not an array, if that value matches any value in the mask it is removed
 
 
-## Configuration YAML Syntax and Rules
+## Configuration YAML syntax and rules
 
 Each module can have a directory immediately underneath the main module directory called `_config/`. Inside this 
 directory you can add YAML files that contain values for the configuration system. 
@@ -210,7 +210,7 @@ in the header section that immediately precedes the value section.
 This reference path has no affect on the value section itself, but is how other header sections refer to this value
 section in their priority chain rules.
 
-## Before / After Priorities
+## Before / After priorities
 
 Values for a specific class property can be specified in several value sections across several modules. These values are
 merged together using the same rules as the configuration system as a whole.
@@ -312,6 +312,6 @@ will result in only the latter coming through.
 </div>
 
 
-## API Documentation
+## API documentation
 
 * [api:Config]

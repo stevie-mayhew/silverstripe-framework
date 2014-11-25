@@ -1,4 +1,4 @@
-summary: Consume external data through their RESTFul interfaces.
+summary: Consume external data through their RESTful interfaces.
 
 # Restful Service
 
@@ -108,7 +108,7 @@ To extract the values (the names) of the entries use:
 
 	// array('Sally', 'Ted', 'Matt', 'John')
 
-### Searching for Values & Attributes
+### Searching for values & attributes
 
 If you don't know the exact position of DOM tree where the node will appear you can use xpath to search for the node. 
 
@@ -129,9 +129,9 @@ To get the value of entry node with the namespace media, use:
 	// array('video');
 
 
-## Best Practices
+## Best practices
 
-### Handling Errors
+### Handling errors
 
 If the web service returned an error (for example, API key not available or inadequate parameters), 
 `[api:RestfulService]` can delegate the error handling to it's descendant class. To handle the errors, subclass 
@@ -171,6 +171,6 @@ If you want to bypass error handling, define `checkErrors` in the constructor fo
 
 * [Embed an RSS Feed](how_to/embed_rss)
 
-## API Documentation
+## API documentation
 
 * `[api:RestfulService]`

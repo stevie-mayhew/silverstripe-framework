@@ -1,7 +1,7 @@
-title: Relations between Records
+title: Relations between records
 summary: Relate models together using the ORM using has_one, has_many, and many_many.
 
-# Relations between Records
+# Relations between records
 
 In most situations you will likely see more than one [api:DataObject] and several classes in your data model may relate
 to one another. An example of this is a `Player` object may have a relationship to one or more `Team` or `Coach` classes
@@ -10,7 +10,7 @@ and could take part in many `Games`. Relations are a key part of designing and b
 Relations are built through static array definitions on a class, in the format `<relationship-name> => <classname>`.
 SilverStripe supports a number of relationship types and each relationship type can have any number of relations.
 
-## has_one
+## Has_one
 
 A 1-to-1 relation creates a database-column called "`<relationship-name>`ID", in the example below this would be 
 "TeamID" on the "Player"-table.
@@ -59,7 +59,7 @@ The relationship can also be navigated in [templates](../templates).
 		<% end_if %>
 	<% end_with %>
 
-## has_many
+## Has_many
 
 Defines 1-to-many joins. As you can see from the previous example, `$has_many` goes hand in hand with `$has_one`.
 
@@ -105,7 +105,7 @@ you will get an instance of [api:HasManyList] rather than the object.
 		echo $player->FirstName;
 	}
 
-To specify multiple $has_manys to the same object you can use dot notation to distinguish them like below:
+To specify multiple $has_many to the same object you can use dot notation to distinguish them like below:
 
 	:::php
 	<?php
@@ -131,7 +131,7 @@ Multiple `$has_one` relationships are okay if they aren't linking to the same ob
 named.
 
 
-## belongs_to
+## Belongs_to
 
 Defines a 1-to-1 relationship with another object, which declares the other end of the relationship with a 
 corresponding $has_one. A single database column named `<relationship-name>ID` will be created in the object with the 
@@ -159,7 +159,7 @@ This is not mandatory unless the relationship would be otherwise ambiguous.
 	}
 
 
-## many_many
+## Many_many
 
 Defines many-to-many joins. A new table, (this-class)_(relationship-name), will be created with a pair of ID fields.
 
@@ -204,7 +204,7 @@ The relationship can also be navigated in [templates](../templates).
 		<% end_if %>
 	<% end_with %>
 
-## many_many or belongs_many_many?
+## Many_many or belongs_many_many?
 
 If you're unsure about whether an object should take on `many_many` or `belongs_many_many`, the best way to think about it is that the object where the relationship will be edited (i.e. via checkboxes) should contain the `many_many`. For instance, in a `many_many` of Product => Categories, the `Product` should contain the `many_many`, because it is much more likely that the user will select Categories for a Product than vice-versa.
 
@@ -227,7 +227,7 @@ and `remove()` method.
 	$team->Supporters()->add($supporter);
 
 
-## Custom Relations
+## Custom relations
 
 You can use the ORM to get a filtered result list without writing any SQL. For example, this snippet gets you the 
 "Players"-relation on a team, but only containing active players.
@@ -253,9 +253,9 @@ Adding new records to a filtered `RelationList` like in the example above doesn'
 criteria on the added record.
 </div>
 
-## Relations on Unsaved Objects
+## Relations on unsaved objects
 
-You can also set *has_many* and *many_many* relations before the `DataObject` is saved. This behavior uses the 
+You can also set *has_many* and *many_many* relations before the `DataObject` is saved. This behaviour uses the 
 [api:UnsavedRelationList] and converts it into the correct `RelationList` when saving the `DataObject` for the first 
 time.
 
@@ -265,12 +265,12 @@ As these lists are not backed by the database, most of the filtering methods on 
 this type. As such, an `UnsavedRelationList` should only be used for setting a relation before saving an object, not 
 for displaying the objects contained in the relation.
 
-## Related Documentation
+## Related documentation
 
 * [Introduction to the Data Model and ORM](data_model_and_orm)
 * [Lists](lists)
 
-## API Documentation
+## API documentation
 
 * [api:HasManyList]
 * [api:ManyManyList]

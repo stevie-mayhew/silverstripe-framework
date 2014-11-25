@@ -1,7 +1,7 @@
-title: Functional Testing
+title: Functional testing
 summary: Test controllers, forms and HTTP responses.
 
-# Functional Testing
+# Functional testing
 
 [api:FunctionalTest] test your applications `Controller` logic and anything else which requires a web request. The 
 core idea of these tests is the same as `SapphireTest` unit tests but `FunctionalTest` adds several methods for 
@@ -97,10 +97,10 @@ assertion fails if one of the expectedMatches fails to appear.
 `&amp;nbsp;` characters are stripped from the content; make sure that your assertions take this into account.
 </div>
 
-## Related Documentation
+## Related documentation
 
 * [How to write a FunctionalTest](how_tos/write_a_functionaltest)
 
-## API Documentation
+## API documentation
 
 * [api:FunctionalTest]

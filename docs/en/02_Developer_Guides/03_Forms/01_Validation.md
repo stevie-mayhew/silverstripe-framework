@@ -1,7 +1,7 @@
-title: Form Validation
+title: Form validation
 summary: Validate form data through the server side validation API.
 
-# Form Validation
+# Form validation
 
 SilverStripe provides server-side form validation out of the box through the [api:Validator] class and its' child class
 [api:RequiredFields]. A single `Validator` instance is set on each `Form`. Validators are implemented as an argument to 
@@ -112,7 +112,7 @@ the same validation logic applied to it throughout.
 		}
 	}
 
-Or, an alternative approach to the custom class is to define the behavior inside the Form's action method. This is less
+Or, an alternative approach to the custom class is to define the behaviour inside the Form's action method. This is less
 reusable and would not be possible within the `CMS` or other automated `UI` but does not rely on creating custom 
 `FormField` classes.
 	
@@ -189,11 +189,11 @@ classes added to each input. For Parsley we can structure the form like.
 	$field->setAttribute('data-parsley-mincheck', '2');
 
 
-## Model Validation
+## Model validation
 
 An alternative (or additional) approach to validation is to place it directly on the database model. SilverStripe 
 provides a `[api:DataObject->validate]` method to validate data at the model level. See 
-[Data Model Validation](../model/validation). 
+[datamodel validation](../model/validation). 
 
 ### Validation in the CMS
 
@@ -229,7 +229,7 @@ Again, custom error messages can be provided through the `FormField`
 			));
 		}
 
-## API Documentation
+## API documentation
 
  * [api:RequiredFields]
  * [api:Validator]

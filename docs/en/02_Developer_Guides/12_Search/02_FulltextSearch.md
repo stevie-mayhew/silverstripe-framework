@@ -13,7 +13,7 @@ a high level wrapper for running advanced search services such as Solr, Lucene o
 `MySQL` search.
 </div>
 
-## Adding Fulltext Support to MySQLDatabase
+## Adding fulltext support to MySQLDatabase
 
 The [api:MySQLDatabase] class defaults to creating tables using the InnoDB storage engine. As Fulltext search in MySQL
 requires the MyISAM storage engine, any DataObject you wish to use with Fulltext search must be changed to use MyISAM
@@ -39,6 +39,6 @@ records and cannot easily be adapted to include custom `DataObject` instances. T
 default site search, have a look at those extensions and modify as required.
 </div>
 
-## API Documentation
+## API documentation
 
 * [api:FulltextSearchable]

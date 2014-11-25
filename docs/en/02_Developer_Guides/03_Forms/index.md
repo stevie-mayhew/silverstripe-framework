@@ -8,7 +8,7 @@ framework for dealing with submissions and validation.
 
 [CHILDREN Exclude="How_Tos,Fields"]
 
-## FormField Documentation
+## FormField documentation
 
 [CHILDREN Folder="Fields"]
 
@@ -16,7 +16,7 @@ framework for dealing with submissions and validation.
 
 [CHILDREN How_Tos]
 
-## API Documentation
+## API documentation
 
 * [api:Form]
 * [api:FormField]

@@ -12,11 +12,11 @@ performing and navigating around the permission checks on the users actions.
 
 [CHILDREN]
 
-## Related Documentation
+## Related documentation
 
-* [Execution Pipeline](../execution_pipeline)
+* [Execution pipeline](../execution_pipeline)
 
-## API Documentation
+## API documentation
 
 * [api:Controller]
 * [api:SS_HTTPRequest]

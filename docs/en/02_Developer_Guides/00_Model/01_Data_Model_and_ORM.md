@@ -1,19 +1,19 @@
-title: Introduction to the Data Model and ORM
-summary: Introduction to creating and querying a database records through the ORM (object-relational model)
+title: Introduction to the data model and ORM
+summary: Introduction to creating and querying a database records through object-relational mapping (ORM).
 
-# Introduction to the Data Model and ORM
+# Introduction to the data model and ORM
 
-SilverStripe uses an [object-relational model](http://en.wikipedia.org/wiki/Object-relational_model) to represent its
+SilverStripe uses an [object-relational mapper (ORM)](http://en.wikipedia.org/wiki/Object-relational_mapping) to represent its
 information.
 
-*  Each database table maps to a PHP class.
-*  Each database row maps to a PHP object.
-*  Each database column maps to a property on a PHP object.
+*  Each database table maps to a PHP class
+*  Each database row maps to a PHP object
+*  Each database column maps to a property on a PHP object
 
 All data tables in SilverStripe are defined as subclasses of [api:DataObject]. The [api:DataObject] class represents a 
 single row in a database table, following the ["Active Record"](http://en.wikipedia.org/wiki/Active_record_pattern) 
 design pattern. Database Columns are is defined as [Data Types](data_types_and_casting) in the static `$db` variable 
-along with any [relationships](../relations) defined as `$has_one`, `$has_many`, `$many_many` properties on the class.
+along with any [relationships](relations) defined as `$has_one`, `$has_many`, `$many_many` properties on the class.
 
 Let's look at a simple example:
 
@@ -36,12 +36,12 @@ Let's look at a simple example:
 This `Player` class definition will create a database table `Player` with columns for `PlayerNumber`, `FirstName` and 
 so on. After writing this class, we need to regenerate the database schema.
 
-## Generating the Database Schema
+## Generating the database schema
 
 After adding, modifying or removing `DataObject` subclasses, make sure to rebuild your SilverStripe database. The 
 database schema is generated automatically by visiting the URL http://www.yoursite.com/dev/build while authenticated as an administrator.
 
-This script will analyze the existing schema, compare it to what's required by your data classes, and alter the schema 
+This script will analyse the existing schema, compare it to what's required by your data classes, and alter the schema 
 as required.  
 
 It will perform the following changes:
@@ -56,7 +56,7 @@ It **won't** do any of the following
 
   * Delete tables
   * Delete fields
-  * Rename any tables that it doesn't recognize. This allows other applications to coexist in the same database, as long as 
+  * Rename any tables that it doesn't recognise. This allows other applications to coexist in the same database, as long as 
   their table names don't match a SilverStripe data class.
 
 
@@ -105,7 +105,7 @@ Generates the following `SQL`.
 		KEY `ClassName` (`ClassName`)
 	);
 
-## Creating Data Records
+## Creating data records
 
 A new instance of a [api:DataObject] can be created using the `new` syntax.
 	
@@ -118,7 +118,7 @@ Or, a better way is to use the `create` method.
 	$player = Player::create();
 
 <div class="notice" markdown='1'>
-Using the `create()` method provides chainability, which can create add elegance and brevity to your code, e.g. `Player::create()->write()`. More importantly, however, it will look up the class in the [Injector](../extending/injector) so that can the class can be overriden by [dependency injection](http://en.wikipedia.org/wiki/Dependency_injection).
+Using the `create()` method provides chainability, which can create add elegance and brevity to your code, e.g. `Player::create()->write()`. More importantly, however, it will look up the class in the [injector](../extending/injector) so that can the class can be overridden by [dependency injection](http://en.wikipedia.org/wiki/Dependency_injection).
 </div>
 
 
@@ -141,7 +141,7 @@ For convenience, the `write()` method returns the record's ID. This is particula
 	$player = Player::create();
 	$id = $player->write();
 
-## Querying Data
+## Querying data
 
 With the `Player` class defined we can query our data using the `ORM` or Object-Relational Model. The `ORM` provides 
 shortcuts and methods for fetching, sorting and filtering data from our database.
@@ -173,7 +173,7 @@ are `filter()` and `sort()`:
 Provided `filter` values are automatically escaped and do not require any escaping.
 </div>
 
-## Lazy Loading
+## Lazy loading
 
 The `ORM` doesn't actually execute the [api:SQLQuery] until you iterate on the result with a `foreach()` or `<% loop %>`.
 
@@ -222,7 +222,7 @@ Notice that we can step into the loop safely without having to check if `$player
 		// do something here
 	}
 
-See the [Lists](../lists) documentation for more information on dealing with [api:SS_List] instances.
+See the [Lists](lists) documentation for more information on dealing with [api:SS_List] instances.
 
 ## Returning a single DataObject
 
@@ -274,7 +274,7 @@ You can also sort randomly.
 	$players = Player::get()->sort('RAND()')
 	
 
-## Filtering Results
+## Filtering results
 
 The `filter()` method filters the list of objects that gets returned.
 
@@ -313,7 +313,7 @@ Or if you want to find both Sam and Sig.
 
 	// SELECT * FROM Player WHERE FirstName IN ('Sam', 'Sig')
 
-You can use [SearchFilters](searchfilters) to add additional behavior to your `filter` command rather than an 
+You can use [SearchFilters](searchfilters) to add additional behaviour to your `filter` command rather than an 
 exact match.
 
 	:::php
@@ -322,7 +322,7 @@ exact match.
 		'PlayerNumber:GreaterThan' => '10'
 	));
 
-### filterAny
+### FilterAny
 
 Use the `filterAny()` method to match multiple criteria non-exclusively (with an "OR" disjunctive), 
 
@@ -347,7 +347,7 @@ You can combine both conjunctive ("AND") and disjunctive ("OR") statements.
 		));
 	// SELECT * FROM Player WHERE ("LastName" = 'Minnée' AND ("FirstName" = 'Sam' OR "Age" = '17'))
 
-You can use [SearchFilters](searchfilters) to add additional behavior to your `filterAny` command.
+You can use [SearchFilters](searchfilters) to add additional behaviour to your `filterAny` command.
 
 	:::php
 	$players = Player::get()->filterAny(array(
@@ -356,7 +356,7 @@ You can use [SearchFilters](searchfilters) to add additional behavior to your `f
 	));
 
 
-### filterByCallback
+### FilterByCallback
 
 It is also possible to filter by a PHP callback, this will force the data model to fetch all records and loop them in 
 PHP, thus `filter()` or `filterAny()` are to be preferred over `filterByCallback()`.    
@@ -411,7 +411,7 @@ And removing Sig and Sam with that are either age 17 or 74.
 
 	// SELECT * FROM Player WHERE ("FirstName" NOT IN ('Sam','Sig) OR "Age" NOT IN ('17', '74));
 
-You can use [SearchFilters](searchfilters) to add additional behavior to your `exclude` command.
+You can use [SearchFilters](searchfilters) to add additional behaviour to your `exclude` command.
 
 	:::php
 	$players = Player::get()->exclude(array(
@@ -474,7 +474,7 @@ You can specify a WHERE clause fragment (that will be combined with other filter
 	:::php
 	$members = Member::get()->where("\"FirstName\" = 'Sam'")
 
-#### Joining Tables
+#### Joining tables
 
 You can specify a join with the `innerJoin` and `leftJoin` methods.  Both of these methods have the same arguments:
 
@@ -495,7 +495,7 @@ Passing a *$join* statement to will filter results further by the JOINs performe
 **not** return the additionally joined data.
 </div>
 
-### Default Values
+### Default values
 
 Define the default values for all the `$db` fields. This example sets the "Status"-column on Player to "Active" 
 whenever a new object is created.
@@ -512,7 +512,7 @@ whenever a new object is created.
 
 <div class="notice" markdown='1'>
 Note: Alternatively you can set defaults directly in the database-schema (rather than the object-model). See 
-[Data Types and Casting](data-types) for details.
+[data types and casting](data_types_and_casting) for details.
 </div>
 
 ## Subclasses
@@ -577,11 +577,11 @@ record #2 in Page refers to the same object as record #2 in `[api:SiteTree]`.
 
 To retrieve a news article, SilverStripe joins the [api:SiteTree], [api:Page] and NewsArticle tables by their ID fields. 
 
-## Related Documentation
+## Related documentation
 
-* [Data Types and Casting](../data_types_and_casting)
+* [Data types and casting](data_types_and_casting)
 
-## API Documentation
+## API documentation
 
 * [api:DataObject]
 * [api:DataList]

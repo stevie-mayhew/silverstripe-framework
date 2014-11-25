@@ -1,9 +1,9 @@
 title: Indexes
-summary: Add Indexes to your Data Model to optimize database queries.
+summary: Add indexes to your Data Model to optimise database queries.
 
 # Indexes
 
-It is sometimes desirable to add indexes to your data model, whether to optimize queries or add a uniqueness constraint 
+It is sometimes desirable to add indexes to your data model, whether to optimise queries or add a uniqueness constraint 
 to a field. This is done through the `DataObject::$indexes` map, which maps index names to descriptor arrays that 
 represent each index. There's several supported notations:
 
@@ -50,6 +50,6 @@ In order to use more database specific or complex index notations, we also suppo
 		);
 	}
 
-## API Documentation
+## API documentation
 
 * [api:DataObject]

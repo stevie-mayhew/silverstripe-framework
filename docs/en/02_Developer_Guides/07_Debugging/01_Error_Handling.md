@@ -1,7 +1,7 @@
-title: Error Handling
+title: Error handling
 summary: Trap, fire and report user exceptions, warnings and errors.
 
-# Error Handling
+# Error handling
 
 SilverStripe has its own error trapping and handling support. On development sites, SilverStripe will deal harshly with 
 any warnings or errors: a full call-stack is shown and execution stops for anything, giving you early warning of a 
@@ -20,7 +20,7 @@ You should use [user_error](http://www.php.net/user_error) to throw errors where
 		user_error("This time I am warning you", E_USER_WARNING);
 	}
 
-## Error Levels
+## Error levels
 
 *  **E_USER_WARNING:** Err on the side of over-reporting warnings. Throwing warnings provides a means of ensuring that 
 developers know:
@@ -32,7 +32,7 @@ developers know:
 E_USER_ERROR if it's going to be **dangerous** or **impossible** to continue with the request.
 
 
-## Filesystem Logs
+## Filesystem logs
 
 You can indicate a log file relative to the site root.
 
@@ -53,7 +53,7 @@ script might terminate before it reaches the SilverStripe error handling, for ex
 sure `log_errors` and `error_log` in your PHP ini file are configured.
 </div>
 
-## Email Logs
+## Email logs
 
 You can send both fatal errors and warnings in your code to a specified email-address.
 
@@ -68,6 +68,6 @@ You can send both fatal errors and warnings in your code to a specified email-ad
 		SS_Log::add_writer(new SS_LogEmailWriter('admin@domain.com'), SS_Log::ERR);
 	}
 
-## API Documentation
+## API documentation
 
 * [api:SS_Log]

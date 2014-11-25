@@ -1,9 +1,9 @@
-title: Unit and Integration Testing
+title: Unit and integration testing
 summary: Test models, database logic and your object methods.
 
-# Unit and Integration Testing
+# Unit and integration testing
 
-A Unit Test is an automated piece of code that invokes a unit of work in the application and then checks the behavior 
+A Unit Test is an automated piece of code that invokes a unit of work in the application and then checks the behaviour 
 to ensure that it works as it should. A simple example would be to test the result of a PHP method.
 
 **mysite/code/Page.php**
@@ -43,7 +43,7 @@ A SilverStripe unit test is created by extending one of two classes, [api:Sapphi
 you want to test a `Controller`, `Form` or anything that requires a web page.
 
 <div class="info" markdown="1">
-`FunctionalTest` is a subclass of `SapphireTest` so will inherit all of the behaviors. By subclassing `FunctionalTest`
+`FunctionalTest` is a subclass of `SapphireTest` so will inherit all of the behaviours. By subclassing `FunctionalTest`
 you gain the ability to load and test web pages on the site. 
 
 `SapphireTest` in turn, extends `PHPUnit_Framework_TestCase`. For more information on `PHPUnit_Framework_TestCase` see 
@@ -51,9 +51,9 @@ the [PHPUnit](http://www.phpunit.de) documentation. It provides a lot of fundame
 documentation.
 </div>
 
-## Running Tests
+## Running tests
 
-### PHPUnit Binary
+### PHPUnit binary
 
 The `phpunit` binary should be used from the root directory of your website.
 
@@ -82,7 +82,7 @@ path (e.g `vendor/bin/phpunit framework/tests`)
 All command-line arguments are documented on [phpunit.de](http://www.phpunit.de/manual/current/en/textui.html).
 </div>
 	
-### Via a Web Browser
+### Via a web browser
 
 Executing tests from the command line is recommended, since it most closely reflects test runs in any automated testing 
 environments. If for some reason you don't have access to the command line, you can also run tests through the browser.
@@ -113,7 +113,7 @@ limited than using `phpunit` directly, particularly around formatting test outpu
 	# Skip some tests
 
 
-## Test Databases and Fixtures
+## Test databases and fixtures
 
 SilverStripe tests create their own database when the test starts. New `ss_tmp` databases are created using the same 
 connection details you provide for the main website. The new `ss_tmp` database does not copy what is currently in your 
@@ -129,7 +129,7 @@ The test database is rebuilt every time one of the test methods is run. Over tim
 databases on your machine. To get rid of them is a call to `http://yoursite.com/dev/tests/cleanupdb`
 </div>
 
-## Custom PHPUnit Configuration
+## Custom PHPUnit configuration
 
 The `phpunit` executable can be configured by command line arguments or through an XML file. SilverStripe comes with a 
 default `phpunit.xml.dist` that you can use as a starting point. Copy the file into `phpunit.xml` and customize to your 
@@ -224,7 +224,7 @@ individual test case.
 		}
 	}
 
-## Generating a Coverage Report
+## Generating a coverage report
 
 PHPUnit can generate a code coverage report ([docs](http://www.phpunit.de/manual/current/en/code-coverage-analysis.html))
 by executing the following commands.

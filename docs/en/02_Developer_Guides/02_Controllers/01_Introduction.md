@@ -1,7 +1,7 @@
-title: Introduction to a Controller
+title: Introduction to a controller
 summary: A brief look at the definition of a Controller, creating actions and how to respond to requests.
 
-# Introduction to Controllers
+# Introduction to controllers
 
 The following example is for a simple [api:Controller] class. When building off the SilverStripe Framework you will
 subclass the base `Controller` class.
@@ -54,12 +54,12 @@ Make sure that after you have modified the `routes.yml` file, that you clear you
 	    'teams//$Action/$ID/$Name': 'TeamController'
 
 
-For more information about creating custom routes, see the [Routing](routing) documentation.
+For more information about creating custom routes, see the [routing](routing) documentation.
 
 ## Actions
 
 Controllers respond by default to an `index` method. You don't need to define this method (as it's assumed) but you
-can override the `index()` response to provide custom data back to the [Template and Views](../templates). 
+can override the `index()` response to provide custom data back to the [template and views](../templates). 
 
 <div class="notice" markdown="1">
 It is standard in SilverStripe for your controller actions to be `lowercasewithnospaces`
@@ -129,11 +129,11 @@ Action methods can return one of four main things:
 		return $this->response.
 	}
 
-For more information on how a URL gets mapped to an action see the [Routing](routing) documentation.
+For more information on how a URL gets mapped to an action see the [routing](routing) documentation.
 
 ## Security
 
-See the [Access Controller](access_control) documentation.
+See the [access controller](access_control) documentation.
 
 ## Templates
 
@@ -147,7 +147,7 @@ Controller actions can use `renderWith` to override this template selection proc
 `htmlaction`. `MyCustomTemplate.ss` would be used rather than `TeamsController`.
 
 For more information about templates, inheritance and how to rendering into views, See the 
-[Templates and Views](templates) documentation.
+[templates and views](templates) documentation.
 
 ## Link
 
@@ -167,8 +167,8 @@ concatenates the path segments with slashes. The action should map to a method o
 
 ## Related Documentation
 
-* [Execution Pipeline](../execution_pipeline)
-* [Templates and Views](../templates)
+* [Execution pipeline](../execution_pipeline)
+* [Templates and views](../templates)
 
 ## API Documentation
 

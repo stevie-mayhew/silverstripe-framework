@@ -71,12 +71,12 @@ assertion command, and if any one of these assertions fail, so will the test met
 For more information on PHPUnit's assertions see the [PHPUnit manual](http://www.phpunit.de/manual/current/en/api.html#api.assert).
 </div>
 
-## Related Documentation
+## Related documentation
 
 * [Unit Testing](../unit_testing)
 * [Fixtures](../fixtures)
 
-## API Documentation
+## API documentation
 
 * [api:SapphireTest]
 * [api:FunctionalTest]

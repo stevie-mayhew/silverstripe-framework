@@ -6,7 +6,7 @@ summary: Building on tutorial 1, a look at storing data in SilverStripe and crea
 ## Overview
 
 
-In the [first tutorial (Building a basic site)](/tutorials/building_a_basic_site) we learnt how to create a basic site using SilverStripe. This tutorial will build on that, and explore extending SilverStripe by creating our own page types. After doing this we should have a better understanding of how SilverStripe works.
+In the [first tutorial (Building a basic site)](building_a_basic_site) we learnt how to create a basic site using SilverStripe. This tutorial will build on that, and explore extending SilverStripe by creating our own page types. After doing this we should have a better understanding of how SilverStripe works.
 
 ## What are we working towards?
 
@@ -308,7 +308,7 @@ Here we use the page control *Children*. As the name suggests, this control allo
 
 ### Using include files in templates
 
-We can make our templates more modular and easier to maintain by separating commonly-used components in to *include files*.  We are already familiar with the `<% include Sidebar %>` line from looking at the menu in the [first tutorial (Building a basic site)](/tutorials/building_a_basic_site).
+We can make our templates more modular and easier to maintain by separating commonly-used components in to *include files*.  We are already familiar with the `<% include Sidebar %>` line from looking at the menu in the [first tutorial (Building a basic site)](building_a_basic_site).
 
 We'll separate the display of linked articles as we want to reuse this code later on.
 
@@ -545,4 +545,4 @@ a complete staff section.
 
 In this tutorial we have explored the concept of page types. In the process of creating and extending page types we have covered many of the concepts required to build a site with SilverStripe.
 
-[Next Tutorial >>](/tutorials/forms)
+[Next Tutorial >>](forms)

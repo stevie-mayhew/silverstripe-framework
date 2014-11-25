@@ -1,8 +1,8 @@
-summary: Deploy robust applications by bundling Unit and Behavior tests with your application code and modules.
+summary: Deploy robust applications by bundling Unit and Behaviour tests with your application code and modules.
 
-# Unit and Integration Testing
+# Unit and integration testing
 
-For behaviour testing in SilverStripe, check out [SilverStripe Behat Documentation](https://github.com/silverstripe-labs/silverstripe-behat-extension/).
+For behaviour testing in SilverStripe, check out [SilverStripe Behat documentation](https://github.com/silverstripe-labs/silverstripe-behat-extension/).
 
 ## Introduction
 
@@ -23,7 +23,7 @@ You should also read over [the PHPUnit manual](http://www.phpunit.de/manual/curr
 fundamental concepts that we build on in this documentation.
 
 Unit tests are not included in the normal SilverStripe downloads so you need to install them through git repositories
-([installation instructions](/installation/composer)).
+([installation instructions](getting_started/composer)).
 
 ## Install with Composer
 
@@ -50,7 +50,7 @@ of course this information can be version controlled and shared with other team 
 **Note: This doesn't apply for running tests through the "sake" wrapper**
 
 SilverStripe comes with a default `phpunit.xml.dist` that you can use as a starting point. Copy the file into a new
-`phpunit.xml` and customize to your needs - PHPUnit will auto-detect its existence, and prioritize it over the default
+`phpunit.xml` and customise to your needs - PHPUnit will auto-detect its existence, and prioritise it over the default
 file.
 
 There's nothing stopping you from creating multiple XML files (see the `--configuration` flag in
@@ -59,7 +59,7 @@ There's nothing stopping you from creating multiple XML files (see the `--config
 
 ### Database Permissions
 
-SilverStripe tests create thier own database when they are run. Because of this the database user in your config file
+SilverStripe tests create their own database when they are run. Because of this the database user in your config file
 should have the appropriate permissions to create new databases on your server, otherwise tests will not run.
 
 ## Writing Tests
@@ -78,13 +78,13 @@ You will generally write two different kinds of test classes.
 
 Tutorials and recipes for creating tests using the SilverStripe framework:
 
-* [Creating a SilverStripe test](creating-a-silverstripe-test): Writing tests to check core data objects
-* [Creating a functional test](creating-a-functional-test): An overview of functional tests and how to write a functional test
-* [Testing Outgoing Email](testing-email): An overview of the built-in email testing code
+* [Creating a SilverStripe test](how_tos/write_a_sapphiretest): Writing tests to check core data objects
+* [Creating a functional test](how_tos/write_a_functionaltest): An overview of functional tests and how to write a functional test
+* [Testing Outgoing Email](how_tos/testing_email): An overview of the built-in email testing code
 
-## Running Tests
+## Running tests
 
-### Via the "phpunit" Binary on Command Line
+### Via the "phpunit" binary on commandline
 
 The `phpunit` binary should be used from the root directory of your website.
 
@@ -106,9 +106,9 @@ The `phpunit` binary should be used from the root directory of your website.
 All command-line arguments are documented on
 [phpunit.de](http://www.phpunit.de/manual/current/en/textui.html).
 
-### Via the "sake" Wrapper on Command Line
+### Via the "sake" wrapper on commandline
 
-The [sake](/topics/commandline) executable that comes with SilverStripe can trigger a customized
+The [sake](../cli) executable that comes with SilverStripe can trigger a customised
 `[api:TestRunner]` class that handles the PHPUnit configuration and output formatting.
 While the custom test runner a handy tool, its also more limited than using `phpunit` directly,
 particularly around formatting test output.
@@ -128,7 +128,7 @@ particularly around formatting test output.
 	# Skip some tests
 	sake dev/tests/all SkipTests=MySkippedTest
 
-### Via Web Browser
+### Via web browser
 
 Executing tests from the command line is recommended, since it most closely reflects
 test runs in any automated testing environments. However, you can also run tests through the browser (requires PHPUnit version 3.7.*@stable):
